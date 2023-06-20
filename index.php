@@ -28,7 +28,7 @@
   <!-- Inclua o conteúdo principal da página -->
   <main>
     <section class="landingPage">
-        <h1>TRANSFORME DESAFIOS EM OPORTUNIDADES E CONQUISTE O SUCESSO.</h1>
+        <h1>TRANSFORME DESAFIOS EM <br>OPORTUNIDADES E CONQUISTE O <br>SUCESSO.</h1>
         <img src="img/imageLandingPage.png" alt="">
     </section>
     <section class="servicosHome">

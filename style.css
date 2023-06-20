@@ -3,6 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --laranja: F65A38;
+    --fundoLandingPage: F9F6F7;
+    --corpoDoc: F4EFF0;
+    --textoEscuro: 1C1718;
 }
 
 header{
@@ -21,18 +29,38 @@ header{
 
 .navlista{
     display: flex;
-    list-style: none;
 }
 
 .navlista a{
-    margin-left: 60px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 30px;
     font-size: 15px;
     font-weight: 600;
     border-bottom: 2px solid transparent;
     transition: all .55s ease-in;
 }
 
-#numberHeader {
-    margin-left: 40%;
+.navlista a:hover{
+    border-bottom: 2px solid rgb(0, 0, 0);
 }
 
+#numberHeader{
+    margin-left: auto;
+}
+
+.landingPage{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--fundoLandingPage);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+section {
+    padding: 0 19%
+}
