@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 :root {
-    --laranja: F65A38;
-    --fundoLandingPage: F9F6F7;
-    --corpoDoc: F4EFF0;
-    --textoEscuro: 1C1718;
+    --laranja: #F65A38;
+    --fundoLandingPage: #F9F6F7;
+    --corpoDoc: #F4EFF0;
+    --textoEscuro: #1C1718;
+    --fundoCard: #D9D9D9;
+}
+
+body {
+    color: var(--textoEscuro);
 }
 
 header{
@@ -29,6 +37,7 @@ header{
 
 .navlista{
     display: flex;
+    color: var(--textoEscuro);
 }
 
 .navlista a{
@@ -39,6 +48,7 @@ header{
     font-weight: 600;
     border-bottom: 2px solid transparent;
     transition: all .55s ease-in;
+    color: var(--textoEscuro);
 }
 
 .navlista a:hover{
@@ -47,6 +57,8 @@ header{
 
 #numberHeader{
     margin-left: auto;
+    color: var(--laranja);
+    font-weight: 700;
 }
 
 .landingPage{
@@ -59,8 +71,64 @@ header{
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 2rem;
+    font-size: 1.5vw;
+    text-align: center;
 }
 
 section {
-    padding: 0 19%
+    padding: 0 10%
+}
+
+#imagemLP {
+    width: 100%;
+    height: auto;
+}
+
+
+.card {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+#card1, #card2, #card3 {
+width: 350px;
+margin-top: 50px;
+margin-left: 5px;
+background-color: var(--fundoCard);
+border-radius: 10px;
+text-align: center;
+position: relative;
+display: flex;
+flex-direction: column;
+}
+
+.card img {
+width: 100%;
+height: auto;
+display: block;
+border-radius: 10px 10px 0 0;
+}
+
+.card .card-content {
+flex-grow: 1;
+padding: 20px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.card .button-container {
+padding: 10px;
+margin-top: 10px; /* Espaçamento entre o texto e o botão */
+}
+
+.card .button-container button {
+width: 100%;
+background-color: #ff0000;
+color: #ffffff;
+padding: 10px;
+border: none;
+border-radius: 5px;
+font-size: 16px;
 }
