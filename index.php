@@ -1,14 +1,26 @@
- <?php
-  // Aqui você pode incluir qualquer lógica de processamento de dados ou outras funcionalidades em PHP
-?>
+<?php
+session_start();
 
+// Verificar se o usuário é um administrador
+$adm = false;
+if (isset($_SESSION['adm']) && $_SESSION['adm']) {
+    $adm = true;
+}
+
+// Verificar se o usuário deseja fazer logout
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: index.php");
+    exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <title>Souza Consultoria</title>
 </head>
 <body>
@@ -31,37 +43,76 @@
         <h1>TRANSFORME DESAFIOS EM <br>OPORTUNIDADES E CONQUISTE O <br>SUCESSO.</h1>
         <img src="img/imageLandingPage.png" alt="" id="imagemLP">
     </section>
+
     <section class="servicosHome">
-      <div class="card">
-          <div id="card1">
-          <img src="img/desenvolvimentoEstrategia.jpg" alt="">
-            <h3>Desenvolvimento de <br> estratégias</h3>
-            <p>Minha Consultoria Estratégica ajuda empresas a alcançarem seu máximo potencial. Trabalho em parceria com sua equipe, realizando uma análise abrangente do mercado e identificando oportunidades-chave. Com base nessa análise, desenvolvo planos de negócios personalizados e estratégias de crescimento para orientar sua empresa rumo ao sucesso. Com minha expertise estratégica, posiciono sua empresa de forma competitiva e aproveito ao máximo as oportunidades disponíveis. Juntos, alcançaremos resultados excepcionais.</p>
-            <button>Mais</button>
-          </div>
+      <ol class="grid-list">
+        <li>
+          <img src="img/rentabilidade.svg" alt="" id="img1">
+          <h3>Estudo de rentabilidade e viabilidade de negócios</h3>
+          <p>Estudo de rentabilidade e viabilidade de negócios: Análise profunda da lucratividade e sustentabilidade econômica de um negócio, considerando projeções financeiras e identificando possíveis riscos e oportunidades.</p>
+        </li>
 
-          <div id="card2">
-          <img src="img/otimizacaoProcessos.jpg" alt="">
-            <h3>Otimização de <br> processos</h3>
-            <p>Maximize o potencial da sua empresa com minha consultoria estratégica. Identifico oportunidades-chave após uma análise de mercado detalhada e crio planos de negócios personalizados. Minha expertise estratégica posiciona sua empresa de forma competitiva, permitindo que você aproveite ao máximo as oportunidades disponíveis. Juntos, alcançaremos resultados excepcionais.</p>
-            <button>SAIBA MAIS</button>
-          </div>
+        <li>
+          <img src="img/planejamentoFinanceiro.svg" alt="">
+          <h3>Planejamento Financeiro</h3>
+          <p>Elaboração de um plano estratégico que engloba as finanças da empresa, permitindo o controle e a organização dos recursos de forma eficiente.</p>
+        </li>
 
-          <div id="card3">
-            <img src="img/consultoriaTi.jpg" alt="">
-            <h3>Consultoria em <br> tecnologia</h3>
-            <p>Minha Consultoria em Tecnologia ajuda empresas a escolher e implementar as soluções tecnológicas certas para suas necessidades específicas. Com experiência no setor, avalio seu ambiente tecnológico, identifico áreas de melhoria e ofereço recomendações personalizadas. Desde a implementação de sistemas até a escolha de software especializado e melhoria da segurança cibernética, estou aqui para ajudar. Com minha orientação especializada, você aproveitará ao máximo a tecnologia, obtendo melhores resultados, maior eficiência e vantagem competitiva no mercado.</p>
-            <button>Mais</button>
-          </div>
-        </div>
-        <div class="frases">
+        <li>
+          <img src="img/estrategia.svg" alt="">
+          <h3>Auxílio em estratégias</h3>
+          <p> Identificação de oportunidades e desenvolvimento de estratégias personalizadas para otimizar o desempenho e alcançar resultados significativos no negócio.</p>
+        </li>
 
-        </div>
+        <li>
+          <img src="img/aumentoResultado.svg" alt="">
+          <h3>Aumento de resultados e eficiência</h3>
+          <p>Implementação de ações e práticas que visam maximizar os resultados e a eficiência operacional da empresa, melhorando sua produtividade e lucratividade.</p>
+        </li>
 
-        <div class="slider">
+        <li>
+          <img src="img/controleFinanceiro.svg" alt="">
+          <h3>Controle e organização financeira</h3>
+          <p>Estabelecimento de processos e ferramentas para garantir o controle adequado das finanças, permitindo uma gestão sólida e organizada do fluxo de caixa, custos e despesas.</p>
+        </li>
 
-        </div>
+        <li>
+          <img src="img/precificacao.svg" alt="">
+          <h3>Avaliação da precificação</h3>
+          <p>Análise detalhada da estratégia de precificação dos produtos e/ou serviços, visando garantir a competitividade de mercado e a rentabilidade do negócio.</p>
+        </li>
+
+        <li>
+          <img src="img/fluxoCaixa.svg" alt="">
+          <h3>Fluxo de caixa</h3>
+          <p>Estudo de rentabilidade e viabilidade de negócios: Análise profunda da lucratividade e sustentabilidade econômica de um negócio, considerando projeções financeiras e identificando possíveis riscos e oportunidades.</p>
+        </li>
+
+        <li>
+          <img src="img/DRE.svg" alt="">
+          <h3>D.R.E</h3>
+          <p>Relatório Gerencial que apresenta as operações financeiras da empresa, incluindo receitas, custos, despesas, lucros e impostos, permitindo uma análise aprofundada do desempenho financeiro.</p>
+        </li>
+
+        <li>
+          <img src="img/pontoEquilibrio.svg" alt="">
+          <h3>Ponto de equilíbrio</h3>
+          <p>Determinação do nível mínimo de faturamento necessário para cobrir todos os custos e despesas, permitindo uma gestão eficiente e estratégica das operações financeiras da empresa.</p>
+        </li>
+      </ol>
+
     </section>
+
+    <section class="frase">
+      <?php if (isset($_SESSION["adm"]) && $_SESSION["adm"]): ?>
+          <h2>Conteúdo exclusivo para administradores</h2>
+          <p>Este conteúdo só será exibido se o usuário estiver conectado como administrador.</p>
+          <a href="logout.php">Sair</a>
+      <?php endif; ?>
+    </section>
+
+
+
 
   </main>
 
