@@ -13,6 +13,27 @@ if (isset($_GET['logout'])) {
     header("Location: index.php");
     exit();
 }
+
+// Conectar-se ao banco de dados
+define('HOST', 'localhost');
+define('USER', 'root');
+define('PASS', '');
+define('BASE', 'sisconsultoria');
+
+$conn = new mysqli(HOST, USER, PASS, BASE);
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
+}
+
+// Consultar o banco de dados e obter uma frase aleatória
+$sql = "SELECT frase FROM frases ORDER BY RAND() LIMIT 1";
+$result = $conn->query($sql);
+$frase = "";
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $frase = $row["frase"];
+}
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -119,55 +140,68 @@ if (isset($_GET['logout'])) {
 
         <section class="frase">
             <?php if (isset($_SESSION["adm"]) && $_SESSION["adm"]): ?>
-              <form action="salvar.php" method="POST">
-              <!-- Resto dos campos do formulário -->
-              <textarea name="areaTexto" class="ckeditor" id="areaTexto"></textarea>
-              <button type="submit">Enviar</button>
+            <form action="salvar.php" method="POST">
+                <textarea name="areaTexto" class="ckeditor" id="areaTexto"></textarea>
+                <button type="submit">Enviar</button>
             </form>
 
             <script src="ck/build/ckeditor.js"></script>
             <script>
             ClassicEditor
                 .create(document.querySelector('#areaTexto'), {
-
                     licenseKey: '',
-
-
-
-
                 })
                 .then(editor => {
                     window.editor = editor;
-
-
-
-
                 })
                 .catch(error => {
                     console.error('Oops, something went wrong!');
                     console.error(
                         'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:'
-                        );
+                    );
                     console.warn('Build id: ytgd3ddaitjv-t146rmjnjcst');
                     console.error(error);
                 });
             </script>
             <a href="logout.php">Sair</a>
+            <?php else: ?>
+            <p id="frase"></p>
             <?php endif; ?>
         </section>
 
+        <!-- Inclua scripts JavaScript -->
+        <script>
+        // Função para atualizar a frase a cada 5 segundos
+        function updateFrase() {
+            // Encontra o elemento com a frase
+            const fraseElement = document.getElementById('frase');
 
+            // Atualiza a frase usando AJAX ou outra técnica de requisição ao servidor
+            // Aqui está um exemplo usando o Fetch API do JavaScript
+            fetch('atualizar_frase.php')
+                .then(response => response.text())
+                .then(newFrase => {
+                    // Atualiza o conteúdo da frase
+                    fraseElement.textContent = newFrase;
+                })
+                .catch(error => {
+                    console.error('Erro ao atualizar a frase:', error);
+                });
+        }
 
+        // Atualiza a frase inicialmente
+        updateFrase();
 
-    </main>
+        // Atualiza a frase a cada 5 segundos
+        setInterval(updateFrase, 5000);
+        </script>
 
-    <!-- Inclua o rodapé da página -->
-    <footer>
-        <!-- Aqui você pode adicionar informações de contato, links para redes sociais, etc. -->
-        <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
-    </footer>
+        <footer>
+            <!-- Aqui você pode adicionar informações de contato, links para redes sociais, etc. -->
+            <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
+        </footer>
 
-    <!-- Aqui você pode incluir scripts JavaScript ou links para arquivos externos -->
+        <!-- Aqui você pode incluir scripts JavaScript ou links para arquivos externos -->
 </body>
 
 </html>
