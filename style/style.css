@@ -111,3 +111,20 @@ section {
 #img1 {
     margin-top: 55px;
 }
+
+#aspas{
+    width: 40px;
+    height: 40px;
+    margin-left: 80px;
+    margin-top: 20px
+}
+
+#frase{
+    max-width: 500px;
+    margin: 0 auto;
+    max-height: 200px;
+    overflow: auto;
+    font-weight: 500;
+    font-size: 20px;
+    color: #F65A38;
+}

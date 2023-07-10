@@ -8,6 +8,15 @@ define('BASE', 'sisconsultoria');
 // Obtém a frase do CKEditor do campo "frase"
 $frase = $_POST['areaTexto'];
 
+// Remover as tags HTML
+$frase = strip_tags($frase);
+
+// Preservar os caracteres especiais convertidos em entidades HTML
+$frase = htmlspecialchars($frase);
+
+// Salvar a frase no banco de dados ou realizar outras operações necessárias
+
+
 // Conecta ao banco de dados
 $conn = new mysqli(HOST, USER, PASS, BASE);
 

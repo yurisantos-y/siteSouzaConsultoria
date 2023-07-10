@@ -14,6 +14,7 @@ if (isset($_GET['logout'])) {
     exit();
 }
 
+
 // Conectar-se ao banco de dados
 define('HOST', 'localhost');
 define('USER', 'root');
@@ -32,9 +33,14 @@ $frase = "";
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $frase = $row["frase"];
-}
-$conn->close();
-?>
+
+
+    // Decodificar os caracteres especiais da frase
+    $frase = htmlspecialchars_decode($frase);
+    }
+    $conn->close();
+
+    ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -80,21 +86,24 @@ $conn->close();
                 <li>
                     <img src="img/planejamentoFinanceiro.svg" alt="">
                     <h3>Planejamento Financeiro</h3>
-                    <p>Elaboração de um plano estratégico que engloba as finanças da empresa, permitindo o controle e a
+                    <p>Elaboração de um plano estratégico que engloba as finanças da empresa, permitindo o controle
+                        e a
                         organização dos recursos de forma eficiente.</p>
                 </li>
 
                 <li>
                     <img src="img/estrategia.svg" alt="">
                     <h3>Auxílio em estratégias</h3>
-                    <p> Identificação de oportunidades e desenvolvimento de estratégias personalizadas para otimizar o
+                    <p> Identificação de oportunidades e desenvolvimento de estratégias personalizadas para otimizar
+                        o
                         desempenho e alcançar resultados significativos no negócio.</p>
                 </li>
 
                 <li>
                     <img src="img/aumentoResultado.svg" alt="">
                     <h3>Aumento de resultados e eficiência</h3>
-                    <p>Implementação de ações e práticas que visam maximizar os resultados e a eficiência operacional da
+                    <p>Implementação de ações e práticas que visam maximizar os resultados e a eficiência
+                        operacional da
                         empresa, melhorando sua produtividade e lucratividade.</p>
                 </li>
 
@@ -108,7 +117,8 @@ $conn->close();
                 <li>
                     <img src="img/precificacao.svg" alt="">
                     <h3>Avaliação da precificação</h3>
-                    <p>Análise detalhada da estratégia de precificação dos produtos e/ou serviços, visando garantir a
+                    <p>Análise detalhada da estratégia de precificação dos produtos e/ou serviços, visando garantir
+                        a
                         competitividade de mercado e a rentabilidade do negócio.</p>
                 </li>
 
@@ -131,7 +141,8 @@ $conn->close();
                 <li>
                     <img src="img/pontoEquilibrio.svg" alt="">
                     <h3>Ponto de equilíbrio</h3>
-                    <p>Determinação do nível mínimo de faturamento necessário para cobrir todos os custos e despesas,
+                    <p>Determinação do nível mínimo de faturamento necessário para cobrir todos os custos e
+                        despesas,
                         permitindo uma gestão eficiente e estratégica das operações financeiras da empresa.</p>
                 </li>
             </ol>
@@ -144,6 +155,7 @@ $conn->close();
                 <textarea name="areaTexto" class="ckeditor" id="areaTexto"></textarea>
                 <button type="submit">Enviar</button>
             </form>
+
 
             <script src="ck/build/ckeditor.js"></script>
             <script>
@@ -165,6 +177,7 @@ $conn->close();
             </script>
             <a href="logout.php">Sair</a>
             <?php else: ?>
+            <img src="img/aspas.svg" alt="" id="aspas">
             <p id="frase"></p>
             <?php endif; ?>
         </section>
@@ -193,15 +206,81 @@ $conn->close();
         updateFrase();
 
         // Atualiza a frase a cada 5 segundos
-        setInterval(updateFrase, 5000);
+        setInterval(updateFrase, 2000);
         </script>
+
+        <style>
+        .carousel {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            flex: 0 0 33.33%;
+            /* 3 quadrados por vez */
+            margin: 10px;
+            background-color: gray;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        </style>
+
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-item">Quadrado 1</div>
+                <div class="carousel-item">Quadrado 2</div>
+                <div class="carousel-item">Quadrado 3</div>
+                <div class="carousel-item">Quadrado 4</div>
+                <div class="carousel-item">Quadrado 5</div>
+                <div class="carousel-item">Quadrado 6</div>
+                <!-- Adicione mais quadrados conforme necessário -->
+            </div>
+        </div>
+
+        <button onclick="moveCarousel('left')">Anterior</button>
+        <button onclick="moveCarousel('right')">Próximo</button>
+
+        <script>
+        const carouselContainer = document.querySelector('.carousel-container');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const itemWidth = carouselItems[0].offsetWidth + 20; // Considere a margem
+
+        let currentPosition = 0;
+
+        function moveCarousel(direction) {
+            const containerWidth = carouselContainer.offsetWidth;
+
+            if (direction === 'left') {
+                currentPosition -= itemWidth;
+                if (currentPosition < 0) {
+                    currentPosition = 0;
+                }
+            } else if (direction === 'right') {
+                currentPosition += itemWidth;
+                const maxPosition = itemWidth * (carouselItems.length - 3);
+                if (currentPosition > maxPosition) {
+                    currentPosition = maxPosition;
+                }
+            }
+
+            carouselContainer.style.transform = `translateX(-${currentPosition}px)`;
+        }
+        </script>
+
 
         <footer>
             <!-- Aqui você pode adicionar informações de contato, links para redes sociais, etc. -->
             <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
         </footer>
-
-        <!-- Aqui você pode incluir scripts JavaScript ou links para arquivos externos -->
+    </main>
+    <!-- Aqui você pode incluir scripts JavaScript ou links para arquivos externos -->
 </body>
 
 </html>
