@@ -49,6 +49,7 @@ if ($result->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/carousel.css">
     <title>Souza Consultoria</title>
 </head>
 
@@ -158,81 +159,20 @@ if ($result->num_rows > 0) {
 
 
             <script src="ck/build/ckeditor.js"></script>
-            <script>
-            ClassicEditor
-                .create(document.querySelector('#areaTexto'), {
-                    licenseKey: '',
-                })
-                .then(editor => {
-                    window.editor = editor;
-                })
-                .catch(error => {
-                    console.error('Oops, something went wrong!');
-                    console.error(
-                        'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:'
-                    );
-                    console.warn('Build id: ytgd3ddaitjv-t146rmjnjcst');
-                    console.error(error);
-                });
-            </script>
+            <script src="script/ckeditor.js"></script>
             <a href="logout.php">Sair</a>
             <?php else: ?>
             <img src="img/aspas.svg" alt="" id="aspas">
-            <p id="frase"></p>
+            <p id="frase" class="frase-dinamica"></p>
             <?php endif; ?>
+
+            <script src="script/frases.js"></script>
         </section>
 
-        <!-- Inclua scripts JavaScript -->
-        <script>
-        // Função para atualizar a frase a cada 5 segundos
-        function updateFrase() {
-            // Encontra o elemento com a frase
-            const fraseElement = document.getElementById('frase');
+        </head>
 
-            // Atualiza a frase usando AJAX ou outra técnica de requisição ao servidor
-            // Aqui está um exemplo usando o Fetch API do JavaScript
-            fetch('atualizar_frase.php')
-                .then(response => response.text())
-                .then(newFrase => {
-                    // Atualiza o conteúdo da frase
-                    fraseElement.textContent = newFrase;
-                })
-                .catch(error => {
-                    console.error('Erro ao atualizar a frase:', error);
-                });
-        }
 
-        // Atualiza a frase inicialmente
-        updateFrase();
-
-        // Atualiza a frase a cada 5 segundos
-        setInterval(updateFrase, 2000);
-        </script>
-
-        <style>
-        .carousel {
-            display: flex;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .carousel-container {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-item {
-            flex: 0 0 33.33%;
-            /* 3 quadrados por vez */
-            margin: 10px;
-            background-color: gray;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        </style>
-
-        <div class="carousel">
+        <section class="carousel">
             <div class="carousel-container">
                 <div class="carousel-item">Quadrado 1</div>
                 <div class="carousel-item">Quadrado 2</div>
@@ -240,47 +180,39 @@ if ($result->num_rows > 0) {
                 <div class="carousel-item">Quadrado 4</div>
                 <div class="carousel-item">Quadrado 5</div>
                 <div class="carousel-item">Quadrado 6</div>
-                <!-- Adicione mais quadrados conforme necessário -->
+                <div class="carousel-item">Quadrado 1</div>
+                <div class="carousel-item">Quadrado 2</div>
+                <div class="carousel-item">Quadrado 3</div>
+                <div class="carousel-item">Quadrado 4</div>
+                <div class="carousel-item">Quadrado 5</div>
+                <div class="carousel-item">Quadrado 6</div>
+                <div class="carousel-item">Quadrado 1</div>
+                <div class="carousel-item">Quadrado 2</div>
+                <div class="carousel-item">Quadrado 3</div>
+                <div class="carousel-item">Quadrado 4</div>
+                <div class="carousel-item">Quadrado 5</div>
+                <div class="carousel-item">Quadrado 6</div>
             </div>
-        </div>
 
-        <button onclick="moveCarousel('left')">Anterior</button>
-        <button onclick="moveCarousel('right')">Próximo</button>
+            <div class="bloco"></div>
 
-        <script>
-        const carouselContainer = document.querySelector('.carousel-container');
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        const itemWidth = carouselItems[0].offsetWidth + 20; // Considere a margem
+            <div class="carousel-controls">
+                <button class="carousel-control-button" onclick="moveCarousel('left')">Anterior</button>
+                <button class="carousel-control-button" onclick="moveCarousel('right')">Próximo</button>
 
-        let currentPosition = 0;
+            </div>
 
-        function moveCarousel(direction) {
-            const containerWidth = carouselContainer.offsetWidth;
-
-            if (direction === 'left') {
-                currentPosition -= itemWidth;
-                if (currentPosition < 0) {
-                    currentPosition = 0;
-                }
-            } else if (direction === 'right') {
-                currentPosition += itemWidth;
-                const maxPosition = itemWidth * (carouselItems.length - 3);
-                if (currentPosition > maxPosition) {
-                    currentPosition = maxPosition;
-                }
-            }
-
-            carouselContainer.style.transform = `translateX(-${currentPosition}px)`;
-        }
-        </script>
+            <script src="script/carousel.js"></script>
+        </section>
 
 
-        <footer>
-            <!-- Aqui você pode adicionar informações de contato, links para redes sociais, etc. -->
-            <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
-        </footer>
-    </main>
-    <!-- Aqui você pode incluir scripts JavaScript ou links para arquivos externos -->
+</html>
+
+
+<footer>
+    <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
+</footer>
+</main>
 </body>
 
 </html>
