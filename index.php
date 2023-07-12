@@ -170,8 +170,10 @@ if ($result->num_rows > 0) {
 
         <section class="wrapper">
             <div class="slide-wrapper" data-slide="wrapper">
-                <button class="slide-nav-button slide-nav-previous fas fa-chevron-left" data-slide="nav-previous-button"></button>
-                <button class="slide-nav-button slide-nav-next fas fa-chevron-right" data-slide="nav-next-button"></button>
+                <button class="slide-nav-button slide-nav-previous fas fa-chevron-left"
+                    data-slide="nav-previous-button"></button>
+                <button class="slide-nav-button slide-nav-next fas fa-chevron-right"
+                    data-slide="nav-next-button"></button>
 
                 <div class="slide-list" data-slide="list">
                     <div class="slide-item" data-slide="item" data-index="0">
@@ -198,11 +200,20 @@ if ($result->num_rows > 0) {
             </div>
         </section>
 
-        
+
+
+
         <script src="ck/build/ckeditor.js"></script>
         <script src="./script/ckeditor.js"></script>
         <script src="./script/frases.js"></script>
         <script src="./script/slides.js"></script>
+        <script>
+        initSlider({
+            autoPlay: true,
+            startAtIndex: 0,
+            timeInterval: 2000
+        })
+        </script>
         <footer>
             <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
         </footer>
