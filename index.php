@@ -48,8 +48,9 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/carousel.css">
+    <link rel="stylesheet" href="style/slider.css">
     <title>Souza Consultoria</title>
 </head>
 
@@ -158,61 +159,54 @@ if ($result->num_rows > 0) {
             </form>
 
 
-            <script src="ck/build/ckeditor.js"></script>
-            <script src="script/ckeditor.js"></script>
             <a href="logout.php">Sair</a>
             <?php else: ?>
             <img src="img/aspas.svg" alt="" id="aspas">
             <p id="frase" class="frase-dinamica"></p>
             <?php endif; ?>
 
-            <script src="script/frases.js"></script>
+
         </section>
 
-        </head>
+        <section class="wrapper">
+            <div class="slide-wrapper" data-slide="wrapper">
+                <button class="slide-nav-button slide-nav-previous fas fa-chevron-left" data-slide="nav-previous-button"></button>
+                <button class="slide-nav-button slide-nav-next fas fa-chevron-right" data-slide="nav-next-button"></button>
 
-
-        <section class="carousel">
-            <div class="carousel-container">
-                <div class="carousel-item">Quadrado 1</div>
-                <div class="carousel-item">Quadrado 2</div>
-                <div class="carousel-item">Quadrado 3</div>
-                <div class="carousel-item">Quadrado 4</div>
-                <div class="carousel-item">Quadrado 5</div>
-                <div class="carousel-item">Quadrado 6</div>
-                <div class="carousel-item">Quadrado 1</div>
-                <div class="carousel-item">Quadrado 2</div>
-                <div class="carousel-item">Quadrado 3</div>
-                <div class="carousel-item">Quadrado 4</div>
-                <div class="carousel-item">Quadrado 5</div>
-                <div class="carousel-item">Quadrado 6</div>
-                <div class="carousel-item">Quadrado 1</div>
-                <div class="carousel-item">Quadrado 2</div>
-                <div class="carousel-item">Quadrado 3</div>
-                <div class="carousel-item">Quadrado 4</div>
-                <div class="carousel-item">Quadrado 5</div>
-                <div class="carousel-item">Quadrado 6</div>
+                <div class="slide-list" data-slide="list">
+                    <div class="slide-item" data-slide="item" data-index="0">
+                        <div class="slide-content">
+                            <img class="slide-image" src="img/logobmw.png" alt="">
+                        </div>
+                    </div>
+                    <div class="slide-item" data-slide="item" data-index="1">
+                        <div class="slide-content">
+                            <img class="slide-image" src="img/logoscania.png" alt="">
+                        </div>
+                    </div>
+                    <div class="slide-item" data-slide="item" data-index="2">
+                        <div class="slide-content">
+                            <img class="slide-image" src="img/logobmw.png" alt="">
+                        </div>
+                    </div>
+                    <div class="slide-item" data-slide="item" data-index="3">
+                        <div class="slide-content">
+                            <img class="slide-image" src="img/logoscania.png" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="bloco"></div>
-
-            <div class="carousel-controls">
-                <button class="carousel-control-button" onclick="moveCarousel('left')">Anterior</button>
-                <button class="carousel-control-button" onclick="moveCarousel('right')">Próximo</button>
-
-            </div>
-
-            <script src="script/carousel.js"></script>
         </section>
 
-
-</html>
-
-
-<footer>
-    <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
-</footer>
-</main>
+        
+        <script src="ck/build/ckeditor.js"></script>
+        <script src="./script/ckeditor.js"></script>
+        <script src="./script/frases.js"></script>
+        <script src="./script/slides.js"></script>
+        <footer>
+            <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
+        </footer>
+    </main>
 </body>
 
 </html>
