@@ -170,6 +170,7 @@ if ($result->num_rows > 0) {
 
         <section class="wrapper">
             <div class="slide-wrapper" data-slide="wrapper">
+                <div class="gradient-overlay"></div>
                 <button class="slide-nav-button slide-nav-previous fas fa-chevron-left"
                     data-slide="nav-previous-button"></button>
                 <button class="slide-nav-button slide-nav-next fas fa-chevron-right"
@@ -178,27 +179,28 @@ if ($result->num_rows > 0) {
                 <div class="slide-list" data-slide="list">
                     <div class="slide-item" data-slide="item" data-index="0">
                         <div class="slide-content">
-                            <img class="slide-image" src="img/logobmw.png" alt="">
+                            <img class="slide-image" src="img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                     <div class="slide-item" data-slide="item" data-index="1">
                         <div class="slide-content">
-                            <img class="slide-image" src="img/logoscania.png" alt="">
+                            <img class="slide-image" src="img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                     <div class="slide-item" data-slide="item" data-index="2">
                         <div class="slide-content">
-                            <img class="slide-image" src="img/logobmw.png" alt="">
+                            <img class="slide-image" src="img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                     <div class="slide-item" data-slide="item" data-index="3">
                         <div class="slide-content">
-                            <img class="slide-image" src="img/logoscania.png" alt="">
+                            <img class="slide-image" src="img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
 
 
@@ -214,9 +216,40 @@ if ($result->num_rows > 0) {
             timeInterval: 2000
         })
         </script>
+
         <footer>
-            <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
+            <div class="grid-container">
+                <div class="logo">
+                    <!-- Inserir a logo aqui -->
+                </div>
+                <div class="services">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li>Consultoria A</li>
+                        <li>Consultoria B</li>
+                        <li>Consultoria C</li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <h3>Social</h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com">Instagram</a></li>
+                        <li><a href="https://www.facebook.com">Facebook</a></li>
+                        <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="newsletter">
+                    <h3>Receba novas informações:</h3>
+                    <input type="email" placeholder="Digite seu e-mail">
+                    <button>Inscrever-se</button>
+                </div>
+            </div>
         </footer>
+
+
+        <!--  <footer>
+            <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
+        </footer> -->
     </main>
 </body>
 
