@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,13 +15,16 @@
     --corpoDoc: #F4EFF0;
     --textoEscuro: #1C1718;
     --fundoCard: #D9D9D9;
+    --corEscuraFooter: #232323;
+    --textoFooter: #5B5B5B;
 }
 
 body {
     color: var(--textoEscuro);
 }
 
-header{
+header {
+    margin-top: 0;
     position: fixed;
     right: 0;
     top: 0;
@@ -31,14 +34,8 @@ header{
     align-items: center;
     justify-content: flex-start;
     padding: 20px 9%;
-    background: rgb(249,246,247);
-    background: linear-gradient(180deg, rgba(249,246,247,1) 1%, rgba(255,255,255,0) 100%);
-
-}
-
-.navlista{
-    display: flex;
-    color: var(--textoEscuro);
+    background: rgb(249, 246, 247);
+    background: linear-gradient(180deg, rgba(249, 246, 247, 1) 1%, rgba(255, 255, 255, 0) 100%);
 }
 
 .navlista a{
@@ -53,16 +50,57 @@ header{
 }
 
 .navlista a:hover{
-    border-bottom: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid var(--textoEscuro);
 }
 
-#numberHeader{
+#numberHeader {
     margin-left: auto;
     color: var(--laranja);
     font-weight: 700;
 }
 
-.landingPage{
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* Estilos para o menu hamburguer quando estiver ativo (visível) */
+.hamburger.active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--fundoLandingPage);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+    z-index: 999;
+}
+
+.hamburger.active .navlista {
+    flex-direction: column;
+}
+
+.hamburger.active .navlista li {
+    margin: 20px 0;
+}
+
+.hamburger.active .navlista a {
+    border-bottom: none;
+}
+
+.navlista {
+    display: flex;
+    color: var(--textoEscuro);
+}
+
+
+
+.landingPage {
     height: 100%;
     width: 100%;
     min-height: 100vh;
@@ -77,7 +115,7 @@ header{
 }
 
 section {
-    padding: 0 10%
+    padding: 0 10%;
 }
 
 #imagemLP {
@@ -112,14 +150,14 @@ section {
     margin-top: 55px;
 }
 
-#aspas{
+#aspas {
     width: 40px;
     height: 40px;
     margin-left: 80px;
-    margin-top: 20px
+    margin-top: 20px;
 }
 
-#frase{
+#frase {
     width: 50%;
     margin: 0 auto;
     height: 150px;
@@ -127,43 +165,228 @@ section {
     overflow: auto;
     font-weight: 500;
     font-size: 20px;
-    color: #F65A38;
+    color: var(--textoEscuro);
 }
 
 footer {
-    background-color: #F65A38;
-    min-height: 30vh;
+    background-color: var(--laranja);
+    min-height: 40vh;
     padding: 20px;
     color: white;
-  }
-  
-  .grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-  }
-  
-  .logo {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.logoFooter {
     grid-column: 1;
-  }
-  
-  .services,
-  .social,
-  .newsletter {
+    margin-right: 200px; /* Adiciona espaçamento à direita da logo */
+}
+
+.services,
+.social,
+.newsletter {
     grid-column: span 1;
-  }
-  
-  h3 {
+}
+
+h3 {
     margin-top: 0;
-  }
-  
-  ul {
+}
+
+ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  a {
+}
+
+a {
     color: white;
     text-decoration: none;
+}
+
+.newsletter {
+    grid-column: 4;
+    text-align: center;
+}
+
+#textoNewsletter{
+    width: 17vw;
+}
+
+.newsletter input {
+    padding: 6px;
+    background-color: transparent;
+    border-radius: 50px;
+    border: 1px solid var(--corEscuraFooter);
+    color: var(--corEscuraFooter);
+    width: 15vw;
+    margin-top: 10px;
+}
+
+.newsletter input:focus {
+    outline: none;
+}
+
+.newsletter input::placeholder {
+    color: var(--corEscuraFooter);
+}
+
+.newsletter button {
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 5px;
+    width: 8vw;
+    margin-top: 10px;
+    color: var(--corpoDoc);
+    background-color: var(--corEscuraFooter);
+}
+
+.newsletter button:hover{
+    background-color: #313131;
+}
+
+/* Estilize o ícone conforme desejado */
+i.fas.fa-user {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
   }
   
+/* Estilos para o ícone do WhatsApp */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    font-size: 44px;
+    width: 70px; /* Tamanho fixo */
+    height: 70px; /* Tamanho fixo */
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex; /* Torna o elemento flexível para centralizar conteúdo */
+    align-items: center; /* Centraliza verticalmente o ícone */
+    justify-content: center; /* Centraliza horizontalmente o ícone */
+    transition: background-color 0.3s ease;
+    z-index: 800;
+}
+
+.whatsapp-icon i {
+    line-height: 1; /* Ajusta o alinhamento do ícone */
+}
+
+.whatsapp-icon:hover {
+    background-color: #128C7E;
+}
+
+  
+
+/* Para telas com largura de até 1024px */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 20px 5%; /* Ajusta o padding do header */
+    }
+
+    .navlista a {
+        margin-left: 15px; /* Ajusta o espaçamento entre os itens do menu */
+    }
+
+    .landingPage {
+        grid-template-columns: 1fr; /* Altera para uma coluna */
+        font-size: 3vw; /* Ajusta o tamanho da fonte */
+    }
+
+    .grid-list {
+        grid-template-columns: repeat(2, 1fr); /* Reduz para duas colunas */
+        grid-gap: 50px; /* Ajusta o espaçamento entre os itens do grid */
+    }
+
+    #frase {
+        width: 80%; /* Ajusta a largura do elemento frase */
+    }
+}
+
+/* Para telas com largura de até 768px */
+@media screen and (max-width: 768px) {
+
+    .logoTopo {
+        width: 10px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Reduz para duas colunas */
+    }
+
+    .newsletter {
+        margin-left: 0; /* Remove o espaçamento lateral do newsletter */
+    }
+
+    .grid-list {
+        grid-template-columns: 1fr; /* Reduz para uma coluna */
+    }
+
+    .logoFooter, .services, .social, .newsletter {
+        margin: 0; /* Remove o espaçamento lateral de todos os elementos */
+    }
+
+    .navlista {
+        display: none; /* Oculta a lista de navegação em telas menores */
+    }
+
+    .hamburger {
+        display: block;
+        top: 20px; /* Ajuste o posicionamento vertical do ícone hamburguer conforme necessário */
+        left: 9%; /* Ajuste o posicionamento horizontal do ícone hamburguer conforme necessário */
+        z-index: 1000;
+      }
+    
+    
+      .navlista {
+        display: none; /* Ocultar a lista de navegação padrão em telas menores */
+      }
+    
+      /* Mostrar a lista de navegação quando o menu hamburguer estiver ativo */
+      .navlista.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-color: var(--fundoLandingPage); /* Adicione a cor de fundo desejada para o menu */
+        padding: 20px;
+        position: absolute;
+        top: 60px; /* Ajuste o posicionamento vertical do menu hamburguer conforme necessário */
+        right: 0; /* Ajuste o posicionamento horizontal do menu hamburguer na extremidade direita da tela */
+        width: 180px; /* Ajuste a largura do menu hamburguer conforme necessário */
+        z-index: 999;
+        border-radius: 20px;
+      }
+    
+      /* Ajuste os estilos dos links da lista de navegação */
+      .navlista.active li {
+        margin: 10px 0;
+      }
+
+    #numberHeader {
+        display: none;
+    }
+
+    .landingPage h1 {
+        display: none;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Altera para uma coluna */
+        justify-items: center; /* Centraliza horizontalmente os itens */
+    }
+
+    .logoFooter, .services, .social, .newsletter {
+        margin: 0; /* Remove o espaçamento lateral de todos os elementos */
+    }
+}

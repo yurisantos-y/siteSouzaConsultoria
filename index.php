@@ -57,7 +57,9 @@ if ($result->num_rows > 0) {
 <body>
     <!-- Inclua o cabeçalho da página -->
     <header>
-        <a href="#" class="logo"><img src="img/logoLaranja.svg" alt="Logo Laranja"></a>
+        <a href="#" class="logoTopo"><img src="img/logoLaranja.svg" alt="Logo Laranja"></a>
+
+        <div class="hamburger">&#9776;</div>
 
         <ul class="navlista">
             <li><a href="#">Serviços</a></li>
@@ -66,6 +68,7 @@ if ($result->num_rows > 0) {
         </ul>
 
         <a href="#" id="numberHeader">(45) 99978-7572</a>
+
     </header>
 
     <!-- Inclua o conteúdo principal da página -->
@@ -169,8 +172,11 @@ if ($result->num_rows > 0) {
         </section>
 
         <section class="wrapper">
+
+            <div class="overlay-wrapper"></div>
+
             <div class="slide-wrapper" data-slide="wrapper">
-                <div class="gradient-overlay"></div>
+
                 <button class="slide-nav-button slide-nav-previous fas fa-chevron-left"
                     data-slide="nav-previous-button"></button>
                 <button class="slide-nav-button slide-nav-next fas fa-chevron-right"
@@ -197,6 +203,26 @@ if ($result->num_rows > 0) {
                             <img class="slide-image" src="img/imgSlide.jpg" alt="">
                         </div>
                     </div>
+                    <div class="slide-item" data-slide="item" data-index="4">
+                        <div class="slide-content">
+                            <img class="slide-image" src="img/imgSlide.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="slide-item" data-slide="item" data-index="5">
+                        <div class="slide-content">
+                            <img class="slide-image" src="img/imgSlide.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="slide-item" data-slide="item" data-index="6">
+                        <div class="slide-content">
+                            <img class="slide-image" src="img/imgSlide.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="slide-item" data-slide="item" data-index="7">
+                        <div class="slide-content">
+                            <img class="slide-image" src="img/imgSlide.jpg" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -204,7 +230,7 @@ if ($result->num_rows > 0) {
 
 
 
-
+        <script src="./script/menuMobile.js"></script>
         <script src="ck/build/ckeditor.js"></script>
         <script src="./script/ckeditor.js"></script>
         <script src="./script/frases.js"></script>
@@ -219,8 +245,8 @@ if ($result->num_rows > 0) {
 
         <footer>
             <div class="grid-container">
-                <div class="logo">
-                    <!-- Inserir a logo aqui -->
+                <div class="logoFooter">
+                    <img src="./img/logoFooter.png" alt="">
                 </div>
                 <div class="services">
                     <h3>Serviços</h3>
@@ -239,12 +265,19 @@ if ($result->num_rows > 0) {
                     </ul>
                 </div>
                 <div class="newsletter">
-                    <h3>Receba novas informações:</h3>
+                    <h3 id="textoNewsletter">Receba novas informações:</h3>
                     <input type="email" placeholder="Digite seu e-mail">
                     <button>Inscrever-se</button>
                 </div>
             </div>
         </footer>
+
+
+        <!-- Ícone Flutuante do WhatsApp -->
+        <a href="https://api.whatsapp.com/send?phone=5545999787572" target="_blank" class="whatsapp-icon">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
 
 
         <!--  <footer>
