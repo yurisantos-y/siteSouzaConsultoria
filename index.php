@@ -158,11 +158,9 @@ if ($result->num_rows > 0) {
             <?php if (isset($_SESSION["adm"]) && $_SESSION["adm"]): ?>
             <form action="salvar.php" method="POST">
                 <textarea name="areaTexto" class="ckeditor" id="areaTexto"></textarea>
-                <button type="submit">Enviar</button>
+                <button type="submit" class="enviar-button">Enviar</button>
             </form>
-
-
-            <a href="logout.php">Sair</a>
+            <a href="logout.php" id="sairCK">Sair</a>
             <?php else: ?>
             <img src="img/aspas.svg" alt="" id="aspas">
             <p id="frase" class="frase-dinamica"></p>
@@ -171,7 +169,7 @@ if ($result->num_rows > 0) {
 
         </section>
 
-        <section class="wrapper">
+<!--         <section class="wrapper">
 
             <div class="overlay-wrapper"></div>
 
@@ -225,7 +223,7 @@ if ($result->num_rows > 0) {
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
 
 
@@ -246,14 +244,16 @@ if ($result->num_rows > 0) {
         <footer>
             <div class="grid-container">
                 <div class="logoFooter">
-                    <img src="./img/logoFooter.png" alt="">
+                    <img src="./img/logoFooter.svg" alt="">
                 </div>
                 <div class="services">
                     <h3>Serviços</h3>
                     <ul>
-                        <li>Consultoria A</li>
-                        <li>Consultoria B</li>
-                        <li>Consultoria C</li>
+                        <li><a href="#">Consultoria</a></li>
+                        <li><a href="#">Sistemas</a></li>
+                        <li><a href="#">Suporte</a></li>
+                        <li><a href="#">Soluções</a></li>
+
                     </ul>
                 </div>
                 <div class="social">
@@ -270,6 +270,20 @@ if ($result->num_rows > 0) {
                     <button>Inscrever-se</button>
                 </div>
             </div>
+
+            <hr class="divider">
+
+            <div class="footer-content">
+                <div class="computec">
+                    <img src="./img/logoComputecDark.svg" alt="">
+                    <h3>computec</h3>
+                </div>
+
+                <div class="rights">
+                    <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
+                </div>
+
+            </div>
         </footer>
 
 
@@ -280,9 +294,6 @@ if ($result->num_rows > 0) {
 
 
 
-        <!--  <footer>
-            <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
-        </footer> -->
     </main>
 </body>
 

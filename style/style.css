@@ -66,7 +66,6 @@ header {
     margin-left: auto;
 }
 
-/* Estilos para o menu hamburguer quando estiver ativo (visível) */
 .hamburger.active {
     position: fixed;
     top: 0;
@@ -97,8 +96,6 @@ header {
     display: flex;
     color: var(--textoEscuro);
 }
-
-
 
 .landingPage {
     height: 100%;
@@ -167,6 +164,31 @@ section {
     font-size: 20px;
     color: var(--textoEscuro);
 }
+#sairCK {
+    display: inline-block; /* Adiciona a propriedade para que o link fique ao lado do botão */
+    color: var(--fundoLandingPage);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: var(--laranja);
+    border-radius: 5px;
+}
+
+/* Mantém o botão com a propriedade já adicionada */
+.enviar-button {
+    /* Adicione os estilos personalizados para o botão "Enviar" aqui */
+    display: inline-block; /* Adiciona a propriedade para que o botão fique ao lado do link */
+    background-color: var(--laranja);
+    color: var(--fundoLandingPage);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.enviar-button:hover {
+    background-color: #FF7749; /* Mude a cor ao passar o mouse, se desejar */
+}
 
 footer {
     background-color: var(--laranja);
@@ -176,6 +198,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .grid-container {
@@ -186,9 +209,49 @@ footer {
     margin: 0 auto;
 }
 
+.divider {
+    border: none;
+    border-top: 1px solid var(--corEscuraFooter);
+    width: 85%;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+.computec, .rights {
+    display: flex;
+    align-items: center;
+    color: var(--corEscuraFooter);
+}
+
+.computec img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.computec h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.rights p {
+    margin: 0;
+    font-size: 16px;
+}
+
 .logoFooter {
     grid-column: 1;
-    margin-right: 200px; /* Adiciona espaçamento à direita da logo */
+    margin-right: 200px;
 }
 
 .services,
@@ -204,11 +267,6 @@ h3 {
 ul {
     list-style-type: none;
     padding: 0;
-}
-
-a {
-    color: white;
-    text-decoration: none;
 }
 
 .newsletter {
@@ -252,15 +310,13 @@ a {
     background-color: #313131;
 }
 
-/* Estilize o ícone conforme desejado */
 i.fas.fa-user {
     position: absolute;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
-  }
-  
-/* Estilos para o ícone do WhatsApp */
+}
+
 .whatsapp-icon {
     position: fixed;
     bottom: 20px;
@@ -268,110 +324,115 @@ i.fas.fa-user {
     background-color: #25D366;
     color: #fff;
     font-size: 44px;
-    width: 70px; /* Tamanho fixo */
-    height: 70px; /* Tamanho fixo */
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    display: flex; /* Torna o elemento flexível para centralizar conteúdo */
-    align-items: center; /* Centraliza verticalmente o ícone */
-    justify-content: center; /* Centraliza horizontalmente o ícone */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background-color 0.3s ease;
     z-index: 800;
 }
 
 .whatsapp-icon i {
-    line-height: 1; /* Ajusta o alinhamento do ícone */
+    line-height: 1;
 }
 
 .whatsapp-icon:hover {
-    background-color: #128C7E;
+    background-color: #1eac52;
 }
 
-  
+.services,
+.social {
+    color: var(--textoFooter);
+    padding-top: 20px;
+}
 
-/* Para telas com largura de até 1024px */
+.services li a,
+.social li a {
+    color: var(--textoFooter);
+    padding-top: 20px;
+}
+
+.services li,
+.social li {
+    margin-bottom: 10px;
+}
+
 @media screen and (max-width: 1024px) {
     header {
-        padding: 20px 5%; /* Ajusta o padding do header */
+        padding: 20px 5%;
     }
 
     .navlista a {
-        margin-left: 15px; /* Ajusta o espaçamento entre os itens do menu */
+        margin-left: 15px;
     }
 
     .landingPage {
-        grid-template-columns: 1fr; /* Altera para uma coluna */
-        font-size: 3vw; /* Ajusta o tamanho da fonte */
+        grid-template-columns: 1fr;
+        font-size: 3vw;
     }
 
     .grid-list {
-        grid-template-columns: repeat(2, 1fr); /* Reduz para duas colunas */
-        grid-gap: 50px; /* Ajusta o espaçamento entre os itens do grid */
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
     }
 
     #frase {
-        width: 80%; /* Ajusta a largura do elemento frase */
+        width: 80%;
     }
 }
 
-/* Para telas com largura de até 768px */
 @media screen and (max-width: 768px) {
-
     .logoTopo {
         width: 10px;
     }
 
     .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* Reduz para duas colunas */
+        grid-template-columns: 1fr;
     }
 
     .newsletter {
-        margin-left: 0; /* Remove o espaçamento lateral do newsletter */
+        margin-left: 0;
     }
 
     .grid-list {
-        grid-template-columns: 1fr; /* Reduz para uma coluna */
+        grid-template-columns: 1fr;
     }
 
     .logoFooter, .services, .social, .newsletter {
-        margin: 0; /* Remove o espaçamento lateral de todos os elementos */
+        margin: 0;
     }
 
     .navlista {
-        display: none; /* Oculta a lista de navegação em telas menores */
+        display: none;
     }
 
     .hamburger {
         display: block;
-        top: 20px; /* Ajuste o posicionamento vertical do ícone hamburguer conforme necessário */
-        left: 9%; /* Ajuste o posicionamento horizontal do ícone hamburguer conforme necessário */
+        top: 20px;
+        left: 9%;
         z-index: 1000;
-      }
-    
-    
-      .navlista {
-        display: none; /* Ocultar a lista de navegação padrão em telas menores */
-      }
-    
-      /* Mostrar a lista de navegação quando o menu hamburguer estiver ativo */
-      .navlista.active {
+    }
+
+    .navlista.active {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        background-color: var(--fundoLandingPage); /* Adicione a cor de fundo desejada para o menu */
+        background-color: var(--fundoLandingPage);
         padding: 20px;
         position: absolute;
-        top: 60px; /* Ajuste o posicionamento vertical do menu hamburguer conforme necessário */
-        right: 0; /* Ajuste o posicionamento horizontal do menu hamburguer na extremidade direita da tela */
-        width: 180px; /* Ajuste a largura do menu hamburguer conforme necessário */
+        top: 60px;
+        right: 0;
+        width: 180px;
         z-index: 999;
         border-radius: 20px;
-      }
-    
-      /* Ajuste os estilos dos links da lista de navegação */
-      .navlista.active li {
+    }
+
+    .navlista.active li {
         margin: 10px 0;
-      }
+    }
 
     #numberHeader {
         display: none;
@@ -382,11 +443,54 @@ i.fas.fa-user {
     }
 
     .grid-container {
-        grid-template-columns: 1fr; /* Altera para uma coluna */
-        justify-items: center; /* Centraliza horizontalmente os itens */
+        grid-template-columns: 1fr;
     }
 
-    .logoFooter, .services, .social, .newsletter {
-        margin: 0; /* Remove o espaçamento lateral de todos os elementos */
+    footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 5%;
+    }
+
+    .logoFooter {
+        margin-right: 0;
+    }
+
+    .logoFooter img {
+        width: 100%;
+    }
+
+    .logoFooter,
+    .social,
+    .services,
+    .newsletter {
+        text-align: center;
+    }
+
+    .logoFooter {
+        grid-column: span 4;
+    }
+
+    .services,
+    .social {
+        grid-column: span 2;
+    }
+
+    .newsletter {
+        grid-column: span 4;
+    }
+
+    #textoNewsletter {
+        width: 100%;
+    }
+
+    .newsletter input {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .newsletter button {
+        width: 100%;
+        max-width: 120px;
     }
 }

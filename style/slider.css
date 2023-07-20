@@ -87,15 +87,15 @@
 @media screen and (max-width: 768px) {
     
     .slide-nav-button {
-        font-size: 22px; /* Ajuste o tamanho do ícone para telas menores */
+        font-size: 22px;
     }
 
     .slide-nav-previous {
-        left: 10px; /* Ajuste a posição do botão "anterior" para telas menores */
+        left: 10px;
     }
 
     .slide-nav-next {
-        right: 10px; /* Ajuste a posição do botão "próximo" para telas menores */
+        right: 10px;
     }
 
     
