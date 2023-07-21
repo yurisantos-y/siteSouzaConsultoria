@@ -31,11 +31,24 @@ $frase = $conn->real_escape_string($frase);
 // Insere a nova frase na tabela "frases" associada ao usuário ID 1
 $sql = "INSERT INTO frases (usuario_id, frase) VALUES (1, '$frase')";
 
+// No lugar do trecho que exibe a mensagem, utilize o seguinte código:
+
 if ($conn->query($sql) === TRUE) {
-    echo "Frase salva com sucesso!";
+    $response = array(
+        "success" => true,
+        "message" => "Frase salva com sucesso!"
+    );
 } else {
-    echo "Erro ao salvar a frase: " . $conn->error;
+    $response = array(
+        "success" => false,
+        "message" => "Erro ao salvar a frase: " . $conn->error
+    );
 }
+
+// Retorna o JSON como resposta
+header('Content-Type: application/json');
+echo json_encode($response);
+
 
 // Fecha a conexão com o banco de dados
 $conn->close();

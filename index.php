@@ -169,7 +169,13 @@ if ($result->num_rows > 0) {
 
         </section>
 
-<!--         <section class="wrapper">
+
+        <div id="popup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p id="popupMessage"></p>
+        </div>
+
+        <section class="wrapper">
 
             <div class="overlay-wrapper"></div>
 
@@ -223,11 +229,11 @@ if ($result->num_rows > 0) {
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
 
 
-
+        <script src="./script/popup.js"></script>
         <script src="./script/menuMobile.js"></script>
         <script src="ck/build/ckeditor.js"></script>
         <script src="./script/ckeditor.js"></script>

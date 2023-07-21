@@ -1,3 +1,5 @@
+/* Global Styles */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 * {
@@ -19,9 +21,7 @@
     --textoFooter: #5B5B5B;
 }
 
-body {
-    color: var(--textoEscuro);
-}
+/* Header Styles */
 
 header {
     margin-top: 0;
@@ -32,24 +32,32 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     padding: 20px 9%;
     background: rgb(249, 246, 247);
     background: linear-gradient(180deg, rgba(249, 246, 247, 1) 1%, rgba(255, 255, 255, 0) 100%);
 }
 
-.navlista a{
+.navlista{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-left: 30px;
     font-size: 15px;
     font-weight: 600;
+}
+
+.navlista li {
+    padding: 20px; /* Mova o padding de .navlista para os itens da lista aqui */
+    margin-right: 20px;
+}
+
+.navlista a {
     border-bottom: 2px solid transparent;
     transition: all .55s ease-in;
     color: var(--textoEscuro);
 }
 
-.navlista a:hover{
+
+.navlista a:hover {
     border-bottom: 2px solid var(--textoEscuro);
 }
 
@@ -92,10 +100,7 @@ header {
     border-bottom: none;
 }
 
-.navlista {
-    display: flex;
-    color: var(--textoEscuro);
-}
+/* Landing Page Styles */
 
 .landingPage {
     height: 100%;
@@ -164,8 +169,9 @@ section {
     font-size: 20px;
     color: var(--textoEscuro);
 }
+
 #sairCK {
-    display: inline-block; /* Adiciona a propriedade para que o link fique ao lado do botão */
+    display: inline-block;
     color: var(--fundoLandingPage);
     margin-top: 20px;
     margin-bottom: 20px;
@@ -174,10 +180,9 @@ section {
     border-radius: 5px;
 }
 
-/* Mantém o botão com a propriedade já adicionada */
-.enviar-button {
-    /* Adicione os estilos personalizados para o botão "Enviar" aqui */
-    display: inline-block; /* Adiciona a propriedade para que o botão fique ao lado do link */
+.enviar-button,
+.newsletter button {
+    display: inline-block;
     background-color: var(--laranja);
     color: var(--fundoLandingPage);
     padding: 10px 20px;
@@ -186,9 +191,12 @@ section {
     cursor: pointer;
 }
 
-.enviar-button:hover {
-    background-color: #FF7749; /* Mude a cor ao passar o mouse, se desejar */
+.enviar-button:hover,
+.newsletter button:hover {
+    background-color: #FF7749;
 }
+
+/* Footer Styles */
 
 footer {
     background-color: var(--laranja);
@@ -226,7 +234,8 @@ footer {
     width: 100%;
 }
 
-.computec, .rights {
+.computec,
+.rights {
     display: flex;
     align-items: center;
     color: var(--corEscuraFooter);
@@ -260,6 +269,16 @@ footer {
     grid-column: span 1;
 }
 
+.social a,
+.services a{
+    color: var(--textoFooter);
+}
+
+.social h3,
+.services h3 {
+    color: var(--textoFooter);
+}
+
 h3 {
     margin-top: 0;
 }
@@ -274,7 +293,7 @@ ul {
     text-align: center;
 }
 
-#textoNewsletter{
+#textoNewsletter {
     width: 17vw;
 }
 
@@ -306,9 +325,11 @@ ul {
     background-color: var(--corEscuraFooter);
 }
 
-.newsletter button:hover{
+.newsletter button:hover {
     background-color: #313131;
 }
+
+/* Floating WhatsApp Icon Styles */
 
 i.fas.fa-user {
     position: absolute;
@@ -343,24 +364,10 @@ i.fas.fa-user {
     background-color: #1eac52;
 }
 
-.services,
-.social {
-    color: var(--textoFooter);
-    padding-top: 20px;
-}
-
-.services li a,
-.social li a {
-    color: var(--textoFooter);
-    padding-top: 20px;
-}
-
-.services li,
-.social li {
-    margin-bottom: 10px;
-}
+/* Media Queries */
 
 @media screen and (max-width: 1024px) {
+    /* Header Styles */
     header {
         padding: 20px 5%;
     }
@@ -369,6 +376,7 @@ i.fas.fa-user {
         margin-left: 15px;
     }
 
+    /* Landing Page Styles */
     .landingPage {
         grid-template-columns: 1fr;
         font-size: 3vw;
@@ -385,10 +393,12 @@ i.fas.fa-user {
 }
 
 @media screen and (max-width: 768px) {
+    /* Header Styles */
     .logoTopo {
         width: 10px;
     }
 
+    /* Landing Page Styles */
     .grid-container {
         grid-template-columns: 1fr;
     }
@@ -401,7 +411,10 @@ i.fas.fa-user {
         grid-template-columns: 1fr;
     }
 
-    .logoFooter, .services, .social, .newsletter {
+    .logoFooter,
+    .services,
+    .social,
+    .newsletter {
         margin: 0;
     }
 
@@ -446,6 +459,7 @@ i.fas.fa-user {
         grid-template-columns: 1fr;
     }
 
+    /* Footer Styles */
     footer {
         flex-direction: column;
         align-items: center;
