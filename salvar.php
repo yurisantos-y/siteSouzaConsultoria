@@ -16,7 +16,6 @@ $frase = htmlspecialchars($frase);
 
 // Salvar a frase no banco de dados ou realizar outras operações necessárias
 
-
 // Conecta ao banco de dados
 $conn = new mysqli(HOST, USER, PASS, BASE);
 
@@ -33,22 +32,28 @@ $sql = "INSERT INTO frases (usuario_id, frase) VALUES (1, '$frase')";
 
 // No lugar do trecho que exibe a mensagem, utilize o seguinte código:
 
+
 if ($conn->query($sql) === TRUE) {
     $response = array(
         "success" => true,
-        "message" => "Frase salva com sucesso!"
+        "message" => "Frase salva com sucesso!",
+        "popup" => true
     );
+    $_SESSION["popup_message"] = "Frase salva com sucesso!";
+    $_SESSION["popup_status"] = "success";
 } else {
     $response = array(
         "success" => false,
-        "message" => "Erro ao salvar a frase: " . $conn->error
+        "message" => "Erro ao salvar a frase: " . $conn->error,
+        "popup" => true
     );
+    $_SESSION["popup_message"] = "Erro ao salvar a frase: " . $conn->error;
+    $_SESSION["popup_status"] = "error";
 }
 
 // Retorna o JSON como resposta
 header('Content-Type: application/json');
 echo json_encode($response);
-
 
 // Fecha a conexão com o banco de dados
 $conn->close();

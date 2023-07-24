@@ -29,16 +29,21 @@ if ($conn->connect_error) {
 // Consultar o banco de dados e obter uma frase aleatória
 $sql = "SELECT frase FROM frases ORDER BY RAND() LIMIT 1";
 $result = $conn->query($sql);
-$frase = "";
-if ($result->num_rows > 0) {
+
+if (!$result || $result->num_rows === 0) {
+    // Caso ocorra um erro na consulta ou não haja resultados
+    $frase = "Nenhuma frase encontrada.";
+} else {
+    // Caso a consulta retorne resultados
     $row = $result->fetch_assoc();
     $frase = $row["frase"];
 
-
     // Decodificar os caracteres especiais da frase
     $frase = htmlspecialchars_decode($frase);
-    }
-    $conn->close();
+}
+
+$conn->close();
+
 
     ?>
 
@@ -154,12 +159,16 @@ if ($result->num_rows > 0) {
 
         </section>
 
+
+
+
         <section class="frase">
             <?php if (isset($_SESSION["adm"]) && $_SESSION["adm"]): ?>
-            <form action="salvar.php" method="POST">
+            <form id="fraseForm" action="salvar.php" method="POST">
                 <textarea name="areaTexto" class="ckeditor" id="areaTexto"></textarea>
                 <button type="submit" class="enviar-button">Enviar</button>
             </form>
+
             <a href="logout.php" id="sairCK">Sair</a>
             <?php else: ?>
             <img src="img/aspas.svg" alt="" id="aspas">
@@ -171,9 +180,93 @@ if ($result->num_rows > 0) {
 
 
         <div id="popup" class="popup">
-            <span class="close" onclick="closePopup()">&times;</span>
             <p id="popupMessage"></p>
         </div>
+
+        <script>
+    // Função para fechar o pop-up
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    // Verificar se o pop-up deve ser exibido ao carregar a página
+    document.addEventListener("DOMContentLoaded", function() {
+        <?php
+        if (isset($_SESSION["popup_message"])) {
+            $popupMessage = $_SESSION["popup_message"];
+            $popupStatus = $_SESSION["popup_status"];
+            unset($_SESSION["popup_message"]);
+            unset($_SESSION["popup_status"]);
+        ?>
+        var popupMessage = "<?php echo $popupMessage; ?>";
+        var popupStatus = "<?php echo $popupStatus; ?>";
+        if (popupStatus === "success") {
+            document.getElementById("popupMessage").style.color = "green";
+        } else {
+            document.getElementById("popupMessage").style.color = "red";
+        }
+        document.getElementById("popupMessage").innerText = popupMessage;
+        document.getElementById("popup").style.display = "block";
+        <?php } ?>
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Função para fechar o pop-up
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    $(document).ready(function() {
+        // Intercepta o evento de envio do formulário
+        $("#fraseForm").submit(function(event) {
+            // Impede que o formulário seja enviado normalmente
+            event.preventDefault();
+
+            // Obtem os dados do formulário
+            var formData = $(this).serialize();
+
+            // Envia os dados via AJAX
+            $.ajax({
+                type: "POST",
+                url: $(this).attr("action"),
+                data: formData,
+                dataType: "json",
+                success: function(response) {
+                    // Verifica a resposta do servidor
+                    if (response.success) {
+                        // Define a mensagem do pop-up com sucesso ou erro
+                        var popupMessage = response.message;
+                        if (response.popup) {
+                            document.getElementById("popupMessage").style.color =
+                                "green";
+                        } else {
+                            document.getElementById("popupMessage").style.color = "red";
+                        }
+                        document.getElementById("popupMessage").innerText =
+                            popupMessage;
+
+                        // Exibe o pop-up
+                        document.getElementById("popup").style.display = "block";
+
+                        // Se a mensagem foi enviada com sucesso, limpa o conteúdo do CKEditor
+                        if (response.success && response.popup) {
+                            CKEDITOR.instances.areaTexto.setData("");
+                        }
+                    } else {
+                        alert("Erro ao enviar a mensagem!");
+                    }
+                },
+                error: function() {
+                    alert("Erro ao enviar a mensagem!");
+                }
+            });
+        });
+    });
+</script>
+
+
 
         <section class="wrapper">
 
@@ -232,8 +325,6 @@ if ($result->num_rows > 0) {
         </section>
 
 
-
-        <script src="./script/popup.js"></script>
         <script src="./script/menuMobile.js"></script>
         <script src="ck/build/ckeditor.js"></script>
         <script src="./script/ckeditor.js"></script>

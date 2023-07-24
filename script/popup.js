@@ -3,47 +3,76 @@ function closePopup() {
     document.getElementById("popup").style.display = "none";
 }
 
-// Função para exibir o pop-up com a mensagem
-function showPopup(message, success) {
-    const popup = document.getElementById("popup");
-    const popupMessage = document.getElementById("popupMessage");
+document.addEventListener("DOMContentLoaded", function() {
+    var popupMessage = localStorage.getItem("popup_message");
+    var popupStatus = localStorage.getItem("popup_status");
 
-    popupMessage.textContent = message;
-    if (success) {
-        popup.style.backgroundColor = "#4CAF50"; // Green background for success
-    } else {
-        popup.style.backgroundColor = "#F44336"; // Red background for error
+    if (popupMessage !== null && popupMessage !== "") {
+        var popupElement = document.getElementById("popup");
+        var popupMessageElement = document.getElementById("popupMessage");
+
+        // Exibe o pop-up
+        popupMessageElement.innerText = popupMessage;
+        if (popupStatus === "success") {
+            popupMessageElement.style.color = "green";
+        } else {
+            popupMessageElement.style.color = "red";
+        }
+        popupElement.style.display = "block";
+
+        // Limpa as informações do pop-up do localStorage
+        localStorage.removeItem("popup_message");
+        localStorage.removeItem("popup_status");
     }
+});
 
-    popup.style.display = "block";
+// Restante do código do popup.js permanece o mesmo
 
-    // Fechar o pop-up após alguns segundos (opcional)
-    setTimeout(function() {
-        popup.style.display = "none";
-    }, 3000); // O pop-up será fechado após 3 segundos (3000 ms)
-}
 
-// Função para enviar a frase e tratar a resposta do servidor
-function enviarFrase() {
-    // Obtém a frase do CKEditor do campo "areaTexto"
-    const frase = CKEDITOR.instances.areaTexto.getData();
+$(document).ready(function() {
+    // Intercepta o evento de envio do formulário
+    $("#fraseForm").submit(function(event) {
+        // Impede que o formulário seja enviado normalmente
+        event.preventDefault();
 
-    // Realiza uma requisição para o servidor via AJAX
-    fetch('salvar.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: 'areaTexto=' + encodeURIComponent(frase)
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Exibe o pop-up com a mensagem do servidor
-        showPopup(data.message, data.success);
-    })
-    .catch(error => {
-        // Em caso de erro na requisição
-        console.error('Erro na requisição AJAX:', error);
-        showPopup('Erro ao enviar a frase. Por favor, tente novamente mais tarde.', false);
+        // Obtem os dados do formulário
+        var formData = $(this).serialize();
+
+        // Envia os dados via AJAX
+        $.ajax({
+            type: "POST",
+            url: $(this).attr("action"),
+            data: formData,
+            dataType: "json",
+            success: function(response) {
+                // Verifica a resposta do servidor
+                if (response.success) {
+                    // Define a mensagem do pop-up com sucesso ou erro
+                    var popupMessage = response.message;
+                    var popupElement = document.getElementById("popup");
+                    var popupMessageElement = document.getElementById("popupMessage");
+
+                    if (response.popup) {
+                        popupMessageElement.style.color = "green";
+                    } else {
+                        popupMessageElement.style.color = "red";
+                    }
+                    popupMessageElement.innerText = popupMessage;
+
+                    // Exibe o pop-up
+                    popupElement.style.display = "block";
+
+                    // Se a mensagem foi enviada com sucesso, limpa o conteúdo do CKEditor
+                    if (response.success && response.popup) {
+                        CKEDITOR.instances.areaTexto.setData("");
+                    }
+                } else {
+                    alert("Erro ao enviar a mensagem!");
+                }
+            },
+            error: function() {
+                alert("Erro ao enviar a mensagem!");
+            }
+        });
     });
-}
+});
