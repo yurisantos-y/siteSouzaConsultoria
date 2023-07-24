@@ -286,7 +286,7 @@ if ($result->num_rows > 0) {
                 </div>
 
                 <div class="rights">
-                    <p>&copy; <?php echo date('Y'); ?> Minha Empresa. Todos os direitos reservados.</p>
+                    <p>&copy; <?php echo date('Y'); ?>Todos os direitos reservados.</p>
                 </div>
 
             </div>
