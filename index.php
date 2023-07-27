@@ -45,7 +45,50 @@ if (!$result || $result->num_rows === 0) {
 $conn->close();
 
 
-    ?>
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
+require 'PHPMailer-master/src/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Crie uma função para enviar e-mails
+function enviarEmail($destinatario, $assunto, $mensagem) {
+    $mail = new PHPMailer();
+
+    try {
+        // Configurações do servidor SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';  // Informe o host do servidor SMTP
+        $mail->SMTPAuth = true;
+        $mail->Username = 'yuri01.sp@gmail.com';  // Informe o usuário do servidor SMTP
+        $mail->Password = 'iadvnsuqljvbvuxp';  // Informe a senha do servidor SMTP
+        $mail->SMTPSecure = 'tls';  // Use 'tls' ou 'ssl' de acordo com a configuração do seu servidor
+        $mail->Port = 587;  // Porta do servidor SMTP
+
+        // Remetente e destinatário
+        $mail->setFrom('seu_email', 'Seu Nome');
+        $mail->addAddress($destinatario);
+
+        // Conteúdo do e-mail
+        $mail->isHTML(true);
+        $mail->Subject = $assunto;
+        $mail->Body = $mensagem;
+
+        // Enviar e-mail
+        if ($mail->send()) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $e) {
+        return false;
+    }
+}
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -60,6 +103,9 @@ $conn->close();
 </head>
 
 <body>
+
+<!-- iadvnsuqljvbvuxp -->
+
     <!-- Inclua o cabeçalho da página -->
     <header>
         <a href="#" class="logoTopo"><img src="img/logoLaranja.svg" alt="Logo Laranja"></a>
@@ -184,87 +230,87 @@ $conn->close();
         </div>
 
         <script>
-    // Função para fechar o pop-up
-    function closePopup() {
-        document.getElementById("popup").style.display = "none";
-    }
+        // Função para fechar o pop-up
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
 
-    // Verificar se o pop-up deve ser exibido ao carregar a página
-    document.addEventListener("DOMContentLoaded", function() {
-        <?php
+        // Verificar se o pop-up deve ser exibido ao carregar a página
+        document.addEventListener("DOMContentLoaded", function() {
+            <?php
         if (isset($_SESSION["popup_message"])) {
             $popupMessage = $_SESSION["popup_message"];
             $popupStatus = $_SESSION["popup_status"];
             unset($_SESSION["popup_message"]);
             unset($_SESSION["popup_status"]);
         ?>
-        var popupMessage = "<?php echo $popupMessage; ?>";
-        var popupStatus = "<?php echo $popupStatus; ?>";
-        if (popupStatus === "success") {
-            document.getElementById("popupMessage").style.color = "green";
-        } else {
-            document.getElementById("popupMessage").style.color = "red";
+            var popupMessage = "<?php echo $popupMessage; ?>";
+            var popupStatus = "<?php echo $popupStatus; ?>";
+            if (popupStatus === "success") {
+                document.getElementById("popupMessage").style.color = "green";
+            } else {
+                document.getElementById("popupMessage").style.color = "red";
+            }
+            document.getElementById("popupMessage").innerText = popupMessage;
+            document.getElementById("popup").style.display = "block";
+            <?php } ?>
+        });
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+        // Função para fechar o pop-up
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
         }
-        document.getElementById("popupMessage").innerText = popupMessage;
-        document.getElementById("popup").style.display = "block";
-        <?php } ?>
-    });
-</script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    // Função para fechar o pop-up
-    function closePopup() {
-        document.getElementById("popup").style.display = "none";
-    }
+        $(document).ready(function() {
+            // Intercepta o evento de envio do formulário
+            $("#fraseForm").submit(function(event) {
+                // Impede que o formulário seja enviado normalmente
+                event.preventDefault();
 
-    $(document).ready(function() {
-        // Intercepta o evento de envio do formulário
-        $("#fraseForm").submit(function(event) {
-            // Impede que o formulário seja enviado normalmente
-            event.preventDefault();
+                // Obtem os dados do formulário
+                var formData = $(this).serialize();
 
-            // Obtem os dados do formulário
-            var formData = $(this).serialize();
+                // Envia os dados via AJAX
+                $.ajax({
+                    type: "POST",
+                    url: $(this).attr("action"),
+                    data: formData,
+                    dataType: "json",
+                    success: function(response) {
+                        // Verifica a resposta do servidor
+                        if (response.success) {
+                            // Define a mensagem do pop-up com sucesso ou erro
+                            var popupMessage = response.message;
+                            if (response.popup) {
+                                document.getElementById("popupMessage").style.color =
+                                    "green";
+                            } else {
+                                document.getElementById("popupMessage").style.color = "red";
+                            }
+                            document.getElementById("popupMessage").innerText =
+                                popupMessage;
 
-            // Envia os dados via AJAX
-            $.ajax({
-                type: "POST",
-                url: $(this).attr("action"),
-                data: formData,
-                dataType: "json",
-                success: function(response) {
-                    // Verifica a resposta do servidor
-                    if (response.success) {
-                        // Define a mensagem do pop-up com sucesso ou erro
-                        var popupMessage = response.message;
-                        if (response.popup) {
-                            document.getElementById("popupMessage").style.color =
-                                "green";
+                            // Exibe o pop-up
+                            document.getElementById("popup").style.display = "block";
+
+                            // Se a mensagem foi enviada com sucesso, limpa o conteúdo do CKEditor
+                            if (response.success && response.popup) {
+                                CKEDITOR.instances.areaTexto.setData("");
+                            }
                         } else {
-                            document.getElementById("popupMessage").style.color = "red";
+                            alert("Erro ao enviar a mensagem!");
                         }
-                        document.getElementById("popupMessage").innerText =
-                            popupMessage;
-
-                        // Exibe o pop-up
-                        document.getElementById("popup").style.display = "block";
-
-                        // Se a mensagem foi enviada com sucesso, limpa o conteúdo do CKEditor
-                        if (response.success && response.popup) {
-                            CKEDITOR.instances.areaTexto.setData("");
-                        }
-                    } else {
+                    },
+                    error: function() {
                         alert("Erro ao enviar a mensagem!");
                     }
-                },
-                error: function() {
-                    alert("Erro ao enviar a mensagem!");
-                }
+                });
             });
         });
-    });
-</script>
+        </script>
 
 
 
@@ -363,24 +409,26 @@ $conn->close();
                 </div>
                 <div class="newsletter">
                     <h3 id="textoNewsletter">Receba novas informações:</h3>
-                    <input type="email" placeholder="Digite seu e-mail">
-                    <button>Inscrever-se</button>
-                </div>
-            </div>
-
-            <hr class="divider">
-
-            <div class="footer-content">
-                <div class="computec">
-                    <img src="./img/logoComputecDark.svg" alt="">
-                    <h3>computec</h3>
+                    <form id="newsletterForm" action="newsletter.php" method="POST">
+                        <input type="email" name="email" placeholder="Digite seu e-mail" required>
+                        <button type="submit">Inscrever-se</button>
+                    </form>
                 </div>
 
-                <div class="rights">
-                    <p>&copy; <?php echo date('Y'); ?>Todos os direitos reservados.</p>
-                </div>
 
-            </div>
+                <hr class="divider">
+
+                <div class="footer-content">
+                    <div class="computec">
+                        <img src="./img/logoComputecDark.svg" alt="">
+                        <h3>computec</h3>
+                    </div>
+
+                    <div class="rights">
+                        <p>&copy; <?php echo date('Y'); ?>Todos os direitos reservados.</p>
+                    </div>
+
+                </div>
         </footer>
 
 
