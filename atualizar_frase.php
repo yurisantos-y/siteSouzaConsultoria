@@ -3,7 +3,7 @@
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', '');
-define('BASE', 'sisconsultoria');
+define('BASE', 'sisprospere');
 
 $conn = new mysqli(HOST, USER, PASS, BASE);
 if ($conn->connect_error) {

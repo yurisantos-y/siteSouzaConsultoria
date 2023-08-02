@@ -3,7 +3,7 @@
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', '');
-define('BASE', 'sisconsultoria');
+define('BASE', 'sisprospere');
 
 // Obtém a frase do CKEditor do campo "frase"
 $frase = $_POST['areaTexto'];
