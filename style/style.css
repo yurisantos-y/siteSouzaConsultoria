@@ -105,7 +105,7 @@ header {
 .landingPage {
     height: 100%;
     width: 100%;
-    min-height: 100vh;
+    min-height: 30vh;
     background-color: var(--fundoLandingPage);
     position: relative;
     display: grid;
@@ -123,6 +123,14 @@ section {
 #imagemLP {
     width: 100%;
     height: auto;
+}
+
+.gota {
+    position: absolute;
+    bottom: -119px; /* Defina a distância desejada entre a imagem e a landingPage */
+    left: 50%; /* Posicione horizontalmente no centro */
+    transform: translateX(-50%); /* Centralize horizontalmente */
+    color: #1eac52;
 }
 
 .servicosHome {
@@ -229,6 +237,8 @@ footer {
     border-top: 1px solid var(--corEscuraFooter);
     width: 85%;
     margin-top: 30px;
+    width: 90%;
+    margin: 30px auto;
 }
 
 .footer-content {
@@ -239,6 +249,7 @@ footer {
     margin: 0 auto;
     padding: 20px;
     width: 100%;
+    flex-wrap: wrap; /* Adicione esta linha para permitir que os elementos quebrem para uma nova linha */
 }
 
 .computec,
@@ -259,6 +270,7 @@ footer {
     font-weight: 700;
     margin: 0;
 }
+
 
 .rights p {
     margin: 0;

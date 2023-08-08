@@ -109,7 +109,7 @@ error_reporting(E_ALL);
 
 <body>
 
-<!-- iadvnsuqljvbvuxp -->
+    <!-- iadvnsuqljvbvuxp -->
 
     <!-- Inclua o cabeçalho da página -->
     <header>
@@ -132,9 +132,21 @@ error_reporting(E_ALL);
         <section class="landingPage">
             <h1>TRANSFORME DESAFIOS EM <br>OPORTUNIDADES E CONQUISTE O <br>SUCESSO.</h1>
             <img src="img/imageLandingPage.png" alt="" id="imagemLP">
+            <div class="gota">
+                <img src="./img/gota.svg" alt="" srcset="">
+            </div>
         </section>
 
         <section class="servicosHome">
+            <p>Mas como fazer sua empresa prosperar com a Prospere? É muito mais simples do que parece.
+
+                Nós realizamos a coleta de todas as informações financeiras da sua empresa, avaliamos a precificação de
+                produtos e/ou serviços e começamos o planejamento financeiro do seu empreendimento usando os dados
+                obtidos. Vamos implementar ferramentas como: fluxo de caixa, DRE e ponto de equilíbrio; analisaremos a
+                viabilidade e rentabilidade do negócio, forneceremos suporte em estratégias, impulsionaremos resultados
+                e eficiência, e por fim, organizaremos e controlaremos as finanças de toda a sua operação.
+
+                Tudo isso será feito em reuniões online frequentes, com uma linguagem simples e descomplicada.</p>
             <ol class="grid-list">
                 <li>
                     <img src="img/rentabilidade.svg" alt="" id="img1">
@@ -375,7 +387,7 @@ error_reporting(E_ALL);
             </div>
         </section>
 
-
+        <script src="./script/gotaLP.js"></script>
         <script src="./script/menuMobile.js"></script>
         <script src="ck/build/ckeditor.js"></script>
         <script src="./script/ckeditor.js"></script>
@@ -419,21 +431,21 @@ error_reporting(E_ALL);
                         <button type="submit">Inscrever-se</button>
                     </form>
                 </div>
+            </div>
 
 
-                <hr class="divider">
+            <hr class="divider">
 
-                <div class="footer-content">
-                    <div class="computec">
-                        <img src="./img/logoComputecDark.svg" alt="">
-                        <h3>computec</h3>
-                    </div>
-
-                    <div class="rights">
-                        <p>&copy; <?php echo date('Y'); ?>Todos os direitos reservados.</p>
-                    </div>
-
+            <div class="footer-content">
+                <div class="computec">
+                    <img src="./img/logoComputecDark.svg" alt="">
+                    <h3>computec</h3>
                 </div>
+
+                <div class="rights">
+                    <p>&copy; <?php echo date('Y'); ?>Todos os direitos reservados.</p>
+                </div>
+            </div>
         </footer>
 
 
