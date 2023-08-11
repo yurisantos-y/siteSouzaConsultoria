@@ -1,69 +1,50 @@
 <?php
-// newsletter.php
+require_once 'index.php';  // Importar as funções e constantes do index.php
 
-// Incluir o arquivo index.php para ter acesso à função enviarEmail()
-require_once 'index.php';
-
-// Conectar-se ao banco de dados (já existe uma conexão no arquivo index.php, mas não precisamos dela aqui)
-$conn = new mysqli(HOST, USER, PASS, BASE);
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
-
-// Verificar se o formulário foi enviado via POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Verificar se o e-mail foi enviado corretamente
     if (isset($_POST["email"]) && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-        $emailCadastrado = $_POST["email"];
+        $email = $_POST["email"];
 
-        // Conectar-se ao banco de dados (já existe uma conexão no arquivo index.php, mas não precisamos dela aqui)
+        // Conectar-se ao banco de dados
         $conn = new mysqli(HOST, USER, PASS, BASE);
         if ($conn->connect_error) {
             die("Falha na conexão: " . $conn->connect_error);
         }
 
-        // Verificar se o e-mail já existe na base de dados
-        $sql = "SELECT email FROM newsletter_emails WHERE email = '$emailCadastrado'";
+        // Verificar se o e-mail já está cadastrado
+        $sql = "SELECT email FROM newsletter_emails WHERE email = '$email'";
         $result = $conn->query($sql);
 
         if ($result && $result->num_rows > 0) {
             echo "E-mail já cadastrado na newsletter.";
         } else {
-            // E-mail do destinatário (pode ser o seu próprio e-mail para testar)
-            $destinatario = ""; // Substitua pelo e-mail do destinatário
+            // Gerar um código de confirmação único
+            $confirmationCode = uniqid();
 
-            // Assunto do e-mail
-            $assunto = "Inscrição na Newsletter";
+            // Inserir o e-mail e o código de confirmação no banco de dados
+            $sql = "INSERT INTO newsletter_emails (email, confirmation_code) VALUES ('$email', '$confirmationCode')";
+            if ($conn->query($sql) === TRUE) {
+                // Enviar e-mail de confirmação
+                $assunto = "Confirme sua inscrição na Newsletter";
+                $mensagem = "Clique no link abaixo para confirmar sua inscrição:\n";
+                $mensagem .= "http://localhost/siteSouzaConsultoria/confirmacao.php?code=$confirmationCode";
 
-            // Conteúdo do e-mail
-            $mensagem = "E-mail cadastrado na Newsletter: " . $_POST["email"];
-
-            // Chame a função enviarEmail() para enviar o e-mail
-            if (enviarEmail($destinatario, $assunto, $mensagem)) {
-                // E-mail enviado com sucesso
-
-                // Insira o e-mail cadastrado no banco de dados
-                $sql = "INSERT INTO lista_emails (email) VALUES ('$emailCadastrado')";
-                if ($conn->query($sql) === TRUE) {
-                    echo "E-mail cadastrado e enviado com sucesso!";
+                if (enviarEmail($email, $assunto, $mensagem)) {
+                    echo "Um e-mail de confirmação foi enviado para o seu endereço.";
                 } else {
-                    echo "Erro ao cadastrar o e-mail: " . $conn->error;
+                    echo "Erro ao enviar o e-mail de confirmação.";
                 }
-
             } else {
-                // Erro ao enviar o e-mail
-                echo "Erro ao enviar o e-mail.";
+                echo "Erro ao cadastrar o e-mail: " . $conn->error;
             }
         }
+
+        // Feche a conexão
+        $conn->close();
     } else {
-        // Caso o e-mail não seja válido
         echo "E-mail inválido!";
     }
 } else {
-    // Caso o formulário não tenha sido enviado corretamente
     echo "Formulário inválido!";
 }
-
-// Feche a conexão após utilizá-la
-$conn->close();
 ?>

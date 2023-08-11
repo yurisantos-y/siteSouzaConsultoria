@@ -140,6 +140,14 @@ section {
     text-align: center;
 }
 
+.servicosHome p {
+    margin-top: 25px;
+}
+
+.servicosHome h1 {
+    margin-top: 150px;
+}
+
 .grid-list {
     display: flex;
     flex-wrap: wrap;

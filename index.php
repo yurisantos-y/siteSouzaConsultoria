@@ -104,7 +104,7 @@ error_reporting(E_ALL);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/slider.css">
-    <title>Souza Consultoria</title>
+    <title>Prospere | Consultoria</title>
 </head>
 
 <body>
@@ -138,9 +138,8 @@ error_reporting(E_ALL);
         </section>
 
         <section class="servicosHome">
-            <p>Mas como fazer sua empresa prosperar com a Prospere? É muito mais simples do que parece.
-
-                Nós realizamos a coleta de todas as informações financeiras da sua empresa, avaliamos a precificação de
+            <h1>Mas como fazer sua empresa prosperar com a Prospere? É muito mais simples do que parece.</h1>
+            <p>Nós realizamos a coleta de todas as informações financeiras da sua empresa, avaliamos a precificação de
                 produtos e/ou serviços e começamos o planejamento financeiro do seu empreendimento usando os dados
                 obtidos. Vamos implementar ferramentas como: fluxo de caixa, DRE e ponto de equilíbrio; analisaremos a
                 viabilidade e rentabilidade do negócio, forneceremos suporte em estratégias, impulsionaremos resultados
