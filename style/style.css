@@ -126,12 +126,29 @@ section {
 }
 
 .gota {
-    position: absolute;
-    bottom: -119px; /* Defina a distância desejada entre a imagem e a landingPage */
-    left: 50%; /* Posicione horizontalmente no centro */
-    transform: translateX(-50%); /* Centralize horizontalmente */
-    color: #1eac52;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 100vh;
+    background: linear-gradient(180deg, rgba(249,246,247,1) 96%, rgba(255,255,255,1) 96%);
+    padding: 0;
 }
+
+.gota svg path {
+    fill: white;
+}
+
+
+.gota img {
+    position: absolute;
+    top: 50%; /* Ajuste verticalmente */
+    left: 50%; /* Ajuste horizontalmente */
+    transform: translate(-50%, -50%); /* Centralizar o elemento */
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: 50px; /* Ajuste o tamanho conforme necessário */
+    z-index: 2; /* Garante que o SVG fique sobre a gota */
+}
+
 
 .servicosHome {
     max-width: 1200px;

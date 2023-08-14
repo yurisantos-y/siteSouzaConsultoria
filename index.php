@@ -104,6 +104,7 @@ error_reporting(E_ALL);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/slider.css">
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
     <title>Prospere | Consultoria</title>
 </head>
 
@@ -132,12 +133,22 @@ error_reporting(E_ALL);
         <section class="landingPage">
             <h1>TRANSFORME DESAFIOS EM <br>OPORTUNIDADES E CONQUISTE O <br>SUCESSO.</h1>
             <img src="img/imageLandingPage.png" alt="" id="imagemLP">
-            <div class="gota">
-                <img src="./img/gota.svg" alt="" srcset="">
-            </div>
+        </section>
+        <section class="gota">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 505.7 70.1" xml:space="preserve">
+                <title>curve-hollow-grey-out</title>
+                <path class="d-block"
+                    d="M351,32.6c-55.9,30.1-71.4,32.7-98.2,32.7s-42.3-2.6-98.2-32.7S28,0,28,0H0v70.1h28h449.6h28.1V0h-28.1C477.6,0,407,2.5,351,32.6z">
+                </path>
+            </svg>
+
+            <a href="#servicosHome">
+                    <img src="./img/arrowgota.svg" alt="" srcset="">
+            </a>
         </section>
 
-        <section class="servicosHome">
+        <section class="servicosHome" id="servicosHome">
             <h1>Mas como fazer sua empresa prosperar com a Prospere? É muito mais simples do que parece.</h1>
             <p>Nós realizamos a coleta de todas as informações financeiras da sua empresa, avaliamos a precificação de
                 produtos e/ou serviços e começamos o planejamento financeiro do seu empreendimento usando os dados
@@ -386,7 +397,6 @@ error_reporting(E_ALL);
             </div>
         </section>
 
-        <script src="./script/gotaLP.js"></script>
         <script src="./script/menuMobile.js"></script>
         <script src="ck/build/ckeditor.js"></script>
         <script src="./script/ckeditor.js"></script>
