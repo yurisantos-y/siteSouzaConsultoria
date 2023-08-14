@@ -131,7 +131,7 @@ error_reporting(E_ALL);
     <!-- Inclua o conteúdo principal da página -->
     <main>
         <section class="landingPage">
-            <h1>TRANSFORME DESAFIOS EM <br>OPORTUNIDADES E CONQUISTE O <br>SUCESSO.</h1>
+            <h1>TRANSFORME DESAFIOS EM <br>OPORTUNIDADES E CONQUISTE O <br> <span id="palavraSucesso">SUCESSO.</span></h1>
             <img src="img/imageLandingPage.png" alt="" id="imagemLP">
         </section>
         <section class="gota">
@@ -452,7 +452,7 @@ error_reporting(E_ALL);
                 </div>
 
                 <div class="rights">
-                    <p>&copy; <?php echo date('Y'); ?>Todos os direitos reservados.</p>
+                    <p>&copy; <?php echo date('Y'); ?> Todos os direitos reservados.</p>
                 </div>
             </div>
         </footer>

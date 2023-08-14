@@ -105,24 +105,31 @@ header {
 .landingPage {
     height: 100%;
     width: 100%;
-    min-height: 30vh;
+    min-height: 85vh;
     background-color: var(--fundoLandingPage);
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 2rem;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     text-align: center;
 }
 
-section {
-    padding: 0 10%;
+.landingPage h1{
+    color: var(--textoEscuro);
 }
 
+
+
 #imagemLP {
-    width: 100%;
+    width: 650px;
     height: auto;
+    margin: 100px;
+}
+
+#palavraSucesso {
+    color: var(--laranja);
 }
 
 .gota {
@@ -193,11 +200,14 @@ section {
 }
 
 #aspas {
-    width: 40px;
-    height: 40px;
-    margin-left: 80px;
-    margin-top: 20px;
+    width: calc(100% - 400px); /* Largura calculada relativa à margem */
+    max-width: 40px;
+    height: auto;
+    margin-left: 400px;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
 }
+
 
 #frase {
     width: 50%;
