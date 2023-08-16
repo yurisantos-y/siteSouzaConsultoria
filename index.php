@@ -111,32 +111,39 @@ error_reporting(E_ALL);
 <body>
 
     <!-- iadvnsuqljvbvuxp -->
-
-    <!-- Inclua o cabeçalho da página -->
     <header>
         <a href="#" class="logoTopo"><img src="img/logoLaranja.svg" alt="Logo Laranja"></a>
-
-        <div class="hamburger">&#9776;</div>
-
+        <div class="mobile-menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <ul class="navlista">
             <li><a href="#">Serviços</a></li>
             <li><a href="#">Sobre</a></li>
             <li><a href="#">Contato</a></li>
         </ul>
-
         <a href="#" id="numberHeader">(45) 99978-7572</a>
-
     </header>
 
-    <!-- Inclua o conteúdo principal da página -->
+
     <main>
         <section class="landingPage">
-            <h1>TRANSFORME DESAFIOS EM <br>OPORTUNIDADES E CONQUISTE O <br> <span id="palavraSucesso">SUCESSO.</span></h1>
+            <h1>TRANSFORME DESAFIOS EM <br>OPORTUNIDADES E CONQUISTE O <br> <span id="palavraSucesso">SUCESSO.</span>
+            </h1>
             <img src="img/imageLandingPage.png" alt="" id="imagemLP">
+            <div class="icone-aleatorio-container">
+                <img src="img/icon1LP.png" alt="" id="icon1">
+                <img src="img/icon2LP.png" alt="" id="icon2">
+                <img src="img/icon3LP.png" alt="" id="icon3">
+
+            </div>
         </section>
+
         <section class="gota">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 505.7 70.1" xml:space="preserve">
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 505.7 70.1"
+                xml:space="preserve">
                 <title>curve-hollow-grey-out</title>
                 <path class="d-block"
                     d="M351,32.6c-55.9,30.1-71.4,32.7-98.2,32.7s-42.3-2.6-98.2-32.7S28,0,28,0H0v70.1h28h449.6h28.1V0h-28.1C477.6,0,407,2.5,351,32.6z">
@@ -144,7 +151,7 @@ error_reporting(E_ALL);
             </svg>
 
             <a href="#servicosHome">
-                    <img src="./img/arrowgota.svg" alt="" srcset="">
+                <img src="./img/arrowgota.svg" alt="" srcset="">
             </a>
         </section>
 

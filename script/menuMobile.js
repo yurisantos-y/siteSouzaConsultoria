@@ -1,9 +1,8 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('.hamburger');
-    const navlista = document.querySelector('.navlista');
+document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
+    const navLista = document.querySelector(".navlista");
   
-    hamburger.addEventListener('click', function () {
-      navlista.classList.toggle('active');
+    mobileMenuIcon.addEventListener("click", function () {
+      navLista.classList.toggle("active");
     });
   });
-  
