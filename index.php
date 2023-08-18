@@ -156,14 +156,14 @@ error_reporting(E_ALL);
         </section>
 
         <section class="servicosHome" id="servicosHome">
-            <h1>Mas como fazer sua empresa prosperar com a Prospere? É muito mais simples do que parece.</h1>
-            <p>Nós realizamos a coleta de todas as informações financeiras da sua empresa, avaliamos a precificação de
+            <h1 id="descricaoGeralh1">Mas como fazer sua empresa prosperar com a <span id="palavraProspere">Prospere?</span> É muito mais simples do que parece.</h1>
+            <p class="descricaoGeralp">Nós realizamos a coleta de todas as informações financeiras da sua empresa, avaliamos a precificação de
                 produtos e/ou serviços e começamos o planejamento financeiro do seu empreendimento usando os dados
                 obtidos. Vamos implementar ferramentas como: fluxo de caixa, DRE e ponto de equilíbrio; analisaremos a
                 viabilidade e rentabilidade do negócio, forneceremos suporte em estratégias, impulsionaremos resultados
-                e eficiência, e por fim, organizaremos e controlaremos as finanças de toda a sua operação.
+                e eficiência, e por fim, organizaremos e controlaremos as finanças de toda a sua operação. <br></p>
 
-                Tudo isso será feito em reuniões online frequentes, com uma linguagem simples e descomplicada.</p>
+                <p class="descricaoFinalp">Tudo isso será feito em reuniões online frequentes, com uma linguagem simples e descomplicada.</p>
             <ol class="grid-list">
                 <li>
                     <img src="img/rentabilidade.svg" alt="" id="img1">
