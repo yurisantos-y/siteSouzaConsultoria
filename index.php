@@ -156,14 +156,17 @@ error_reporting(E_ALL);
         </section>
 
         <section class="servicosHome" id="servicosHome">
-            <h1 id="descricaoGeralh1">Mas como fazer sua empresa prosperar com a <span id="palavraProspere">Prospere?</span> É muito mais simples do que parece.</h1>
-            <p class="descricaoGeralp">Nós realizamos a coleta de todas as informações financeiras da sua empresa, avaliamos a precificação de
+            <h1 id="descricaoGeralh1">Mas como fazer sua empresa prosperar com a <span
+                    id="palavraProspere">Prospere?</span> É muito mais simples do que parece.</h1>
+            <p class="descricaoGeralp">Nós realizamos a coleta de todas as informações financeiras da sua empresa,
+                avaliamos a precificação de
                 produtos e/ou serviços e começamos o planejamento financeiro do seu empreendimento usando os dados
                 obtidos. Vamos implementar ferramentas como: fluxo de caixa, DRE e ponto de equilíbrio; analisaremos a
                 viabilidade e rentabilidade do negócio, forneceremos suporte em estratégias, impulsionaremos resultados
                 e eficiência, e por fim, organizaremos e controlaremos as finanças de toda a sua operação. <br></p>
 
-                <p class="descricaoFinalp">Tudo isso será feito em reuniões online frequentes, com uma linguagem simples e descomplicada.</p>
+            <p class="descricaoFinalp">Tudo isso será feito em reuniões online frequentes, com uma linguagem simples e
+                descomplicada.</p>
             <ol class="grid-list">
                 <li>
                     <img src="img/rentabilidade.svg" alt="" id="img1">
@@ -174,14 +177,14 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="img/planejamentoFinanceiro.svg" alt="" >
+                    <img src="img/planejamentoFinanceiro.svg" alt="">
                     <h3>Planejamento Financeiro</h3>
                     <p>Elaboração de um plano estratégico que engloba as finanças da empresa, permitindo o controle
                         e a
                         organização dos recursos de forma eficiente.</p>
                 </li>
 
-                <li >
+                <li>
                     <img src="img/estrategia.svg" alt="">
                     <h3>Auxílio em estratégias</h3>
                     <p> Identificação de oportunidades e desenvolvimento de estratégias personalizadas para otimizar
@@ -190,7 +193,7 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="img/aumentoResultado.svg" alt="" >
+                    <img src="img/aumentoResultado.svg" alt="">
                     <h3>Aumento de resultados e eficiência</h3>
                     <p>Implementação de ações e práticas que visam maximizar os resultados e a eficiência
                         operacional da
@@ -204,16 +207,16 @@ error_reporting(E_ALL);
                         permitindo uma gestão sólida e organizada do fluxo de caixa, custos e despesas.</p>
                 </li>
 
-                <li >
-                    <img src="img/precificacao.svg" alt="" >
+                <li>
+                    <img src="img/precificacao.svg" alt="">
                     <h3>Avaliação da precificação</h3>
                     <p>Análise detalhada da estratégia de precificação dos produtos e/ou serviços, visando garantir
                         a
                         competitividade de mercado e a rentabilidade do negócio.</p>
                 </li>
 
-                <li >
-                    <img src="img/fluxoCaixa.svg" alt="" >
+                <li>
+                    <img src="img/fluxoCaixa.svg" alt="">
                     <h3>Fluxo de caixa</h3>
                     <p>Estudo de rentabilidade e viabilidade de negócios: Análise profunda da lucratividade e
                         sustentabilidade econômica de um negócio, considerando projeções financeiras e identificando
@@ -221,7 +224,7 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="img/DRE.svg" alt="" >
+                    <img src="img/DRE.svg" alt="">
                     <h3>D.R.E</h3>
                     <p>Relatório Gerencial que apresenta as operações financeiras da empresa, incluindo receitas,
                         custos, despesas, lucros e impostos, permitindo uma análise aprofundada do desempenho
@@ -419,7 +422,7 @@ error_reporting(E_ALL);
         </script>
 
         <footer>
-            <div class="grid-container">
+            <div class="footer-content">
                 <div class="logoFooter">
                     <img src="./img/logoFooter.png" alt="">
                 </div>
@@ -430,7 +433,6 @@ error_reporting(E_ALL);
                         <li><a href="#">Sistemas</a></li>
                         <li><a href="#">Suporte</a></li>
                         <li><a href="#">Soluções</a></li>
-
                     </ul>
                 </div>
                 <div class="social">
@@ -450,15 +452,13 @@ error_reporting(E_ALL);
                 </div>
             </div>
 
-
             <hr class="divider">
 
-            <div class="footer-content">
+            <div class="footer-bottom">
                 <div class="computec">
                     <img src="./img/logoComputecDark.svg" alt="">
                     <h3>computec</h3>
                 </div>
-
                 <div class="rights">
                     <p>&copy; <?php echo date('Y'); ?> Todos os direitos reservados.</p>
                 </div>

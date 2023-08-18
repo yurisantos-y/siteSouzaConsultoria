@@ -252,6 +252,7 @@ header {
 
 .grid-list h3 {
     margin-bottom: 15px;
+    color: var(--corEscuraFooter);
 }
 
 
@@ -308,104 +309,71 @@ footer {
     background-color: var(--laranja);
     min-height: 35vh;
     padding: 20px;
-    color: var(--branco);
+    color: var(--textoFooter);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-footer img {
-    margin-top: 15%;
-    margin-right: 60px;
-    width: 200px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.divider {
-    border: none;
-    border-top: 1px solid var(--corEscuraFooter);
-    width: 90%;
-    margin-top: 90px;
-}
-
 .footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
     width: 100%;
-    flex-wrap: wrap; /* Adicione esta linha para permitir que os elementos quebrem para uma nova linha */
-}
-.computec,
-.rights {
-    display: flex;
-    align-items: center;
-    color: var(--corEscuraFooter);
+    margin-top: 20px;
 }
 
-.computec img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+.logoFooter img {
+    width: 200px;
+    height: auto;
+    margin-top: 55px;
 }
-
-.computec h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin: 0;
-}
-
-
-.rights p {
-    margin: 0;
-    font-size: 16px;
-}
-
 
 .services,
 .social,
 .newsletter {
-    grid-column: span 1;
+    flex-basis: calc(25% - 20px);
 }
 
 .social a,
-.services a{
+.services a {
     color: var(--textoFooter);
+    display: block;
+    margin-top: 10px;
 }
+
 
 .social h3,
 .services h3 {
     color: var(--textoFooter);
 }
 
-h3 {
-    margin-top: 0;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
 .newsletter {
-    grid-column: 4;
     text-align: center;
 }
 
-#textoNewsletter {
-    width: 17vw;
+#textoNewsletter{
+    font-size: 20px;
+    color: var(--textoFooter);
+    font-weight: 500;
+    text-align: center; /* Alinhar ao centro horizontalmente */
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+}
+
+.newsletter h3 {
+    margin-top: 20px;
 }
 
 .newsletter input {
@@ -414,23 +382,17 @@ ul {
     border-radius: 50px;
     border: 1px solid var(--corEscuraFooter);
     color: var(--corEscuraFooter);
-    width: 15vw;
+    width: 100%;
+    max-width: 250px;
     margin-top: 10px;
-}
-
-.newsletter input:focus {
-    outline: none;
-}
-
-.newsletter input::placeholder {
-    color: var(--corEscuraFooter);
 }
 
 .newsletter button {
     border-radius: 50px;
     cursor: pointer;
     padding: 5px;
-    width: 8vw;
+    width: 100%;
+    max-width: 120px;
     margin-top: 10px;
     color: var(--corpoDoc);
     background-color: var(--corEscuraFooter);
@@ -438,6 +400,43 @@ ul {
 
 .newsletter button:hover {
     background-color: #313131;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--textoEscuro);
+    margin: 20px 0;
+}
+
+.computec {
+    display: flex;
+    align-items: center; /* Alinhar verticalmente no centro */
+}
+
+.computec img {
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-right: 10px; /* Adicione um espaço entre a imagem e o cabeçalho */
+}
+
+.computec h3 {
+    margin: 0; /* Remova as margens padrão */
+    color: var(--textoEscuro);
+    font-size: 18px; /* Ajuste o tamanho conforme necessário */
+    font-weight: 600;
+}
+
+/* Posicionamento do logotipo "computec" */
+#logoComputec {
+    margin-right: auto;
+    margin-left: 9%;
+}
+
+/* Posicionamento do botão "right" */
+#right {
+    margin-left: auto;
+    margin-right: 9%;
 }
 
 /* Floating WhatsApp Icon Styles */
@@ -475,11 +474,10 @@ i.fas.fa-user {
     background-color: #1eac52;
 }
 
-/* Media Queries */
+
 
 /* Media Queries */
 @media screen and (max-width: 1024px) {
-    /* Ajuste o cabeçalho */
     header {
         padding: 20px 5%;
     }
@@ -488,25 +486,21 @@ i.fas.fa-user {
         margin-left: 15px;
     }
 
-    /* Ajuste o tamanho da fonte da página de destino */
     .landingPage {
         font-size: 3vw;
     }
 
-    /* Ajuste a largura da imagem de fundo */
     #imagemLP {
         width: 100%;
         margin: 20px 0;
     }
 
-    /* Ajuste o tamanho dos ícones */
     #icon1,
     #icon2,
     #icon3 {
         width: 30px;
     }
 
-    /* Ajuste a posição dos ícones */
     #icon1 {
         top: 20%;
         left: 5%;
@@ -523,45 +517,34 @@ i.fas.fa-user {
     }
 
     .grid-list {
-        grid-template-columns: 1fr; /* Apenas uma coluna por linha */
+        grid-template-columns: 1fr;
     }
 
-    /* Ajuste o tamanho da fonte do rodapé */
-    footer {
-        padding: 20px 5%;
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
     }
 
-
+    .services,
+    .social,
     .newsletter {
-        grid-column: span 4;
+        margin-top: 20px;
+        flex-basis: calc(50% - 10px);
     }
 
-    /* Ajuste o tamanho do texto do formulário de newsletter */
-    #textoNewsletter {
-        width: 100%;
-    }
-
-    /* Ajuste a largura e margem do campo de entrada de texto do formulário de newsletter */
-    .newsletter input {
-        width: 100%;
-        max-width: 250px;
-    }
-
-    /* Ajuste a largura e margem do botão do formulário de newsletter */
-    .newsletter button {
-        width: 100%;
-        max-width: 120px;
+    .services h3,
+    .social h3 {
+        margin-top: 10px;
     }
 }
 
+
 @media screen and (max-width: 768px) {
-    /* Ajuste o tamanho do cabeçalho e os ícones do menu para dispositivos móveis */
     header {
         padding: 20px 5%;
     }
 
     .landingPage {
-        /* Ajuste a altura da Landing Page para se adequar a telas menores */
         min-height: 50vh;
         display: flex;
         flex-direction: column;
@@ -579,28 +562,25 @@ i.fas.fa-user {
         max-width: 400px;
     }
 
-
-    /* Ocultar o número de contato no cabeçalho */
     #numberHeader {
         display: none;
     }
 
     #descricaoGeralh1 {
-        font-size: 6vw; /* Tamanho responsivo menor para h1 em telas menores */
-        margin-top: 10px; /* Ajuste o espaçamento responsivo */
-        margin-bottom: 10px; /* Ajuste o espaçamento responsivo */
+        font-size: 6vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .descricaoGeralp,
     .descricaoFinalp {
-        font-size: 3vw; /* Tamanho responsivo menor para p em telas menores */
+        font-size: 3vw;
     }
 
     .grid-list {
-        grid-template-columns: 1fr; /* Uma coluna por linha em telas menores */
-        max-width: 100%; /* Ocupar a largura total da tela em telas menores */
+        grid-template-columns: 1fr;
+        max-width: 100%;
     }
-
 
     .navlista {
         display: none;
@@ -638,22 +618,20 @@ i.fas.fa-user {
         transition: 0.3s;
     }
 
-
     .navlista li {
         margin: 10px 0;
     }
 
     .gota {
-        width: 100%; /* Tornar a largura responsiva */
+        width: 100%;
         background: linear-gradient(180deg, rgba(249,246,247,1) 90%, rgba(255,255,255,1) 90%);
     }
 
     .gota img {
-        width: 30px; /* Reduzir o tamanho do ícone para dispositivos menores */
-        height: 30px; /* Reduzir o tamanho do ícone para dispositivos menores */
+        width: 30px;
+        height: 30px;
     }
 
-    /* Ajuste a posição dos ícones e os estilos do formulário */
     #icon1,
     #icon2,
     #icon3 {
@@ -676,32 +654,68 @@ i.fas.fa-user {
     }
 
     #descricaoGeralh1 {
-        font-size: 5vw; /* Tamanho responsivo menor para h1 em telas menores */
+        font-size: 5vw;
     }
 
     #descricaoGeralp {
-        font-size: 4vw; /* Tamanho responsivo menor para p em telas menores */
+        font-size: 4vw;
     }
 
-    /* Ajuste o tamanho dos elementos do formulário */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .logoFooter img {
+        margin-top: 20px;
+    }
+
+    .services,
+    .social {
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .social a,
+    .services a {
+        color: var(--textoFooter);
+        display: block;
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    .social h3,
+    .services h3 {
+        color: var(--textoFooter);
+        text-align: left;
+    }
+
+    .services,
+    .social,
+    .newsletter {
+        flex-basis: 100%;
+    }
+
     .newsletter input,
     .newsletter button {
-        width: 100%;
-        max-width: none; /* Remova a limitação máxima de largura */
+        max-width: 100%;
     }
 
-    .services, .social {
-        grid-column: span 1;
+    .newsletter h3 {
+        margin-top: 10px;
+        width: 2vw;
     }
 
-    footer img {
-        width: 100%;
-        max-width: 200px;
-        margin-top: 45px;
+    #aspas {
+        margin-left: 107px;
+        margin-bottom: 10px;
     }
-
-    .computec img {
-        margin-bottom: 45px;
-    }
-
 }
