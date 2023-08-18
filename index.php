@@ -110,7 +110,7 @@ error_reporting(E_ALL);
 
 <body>
 
-    <!-- iadvnsuqljvbvuxp -->
+    <!--  -->
     <header>
         <a href="#" class="logoTopo"><img src="img/logoLaranja.svg" alt="Logo Laranja"></a>
         <div class="mobile-menu-icon">
@@ -174,14 +174,14 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="img/planejamentoFinanceiro.svg" alt="">
+                    <img src="img/planejamentoFinanceiro.svg" alt="" >
                     <h3>Planejamento Financeiro</h3>
                     <p>Elaboração de um plano estratégico que engloba as finanças da empresa, permitindo o controle
                         e a
                         organização dos recursos de forma eficiente.</p>
                 </li>
 
-                <li>
+                <li >
                     <img src="img/estrategia.svg" alt="">
                     <h3>Auxílio em estratégias</h3>
                     <p> Identificação de oportunidades e desenvolvimento de estratégias personalizadas para otimizar
@@ -190,7 +190,7 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="img/aumentoResultado.svg" alt="">
+                    <img src="img/aumentoResultado.svg" alt="" >
                     <h3>Aumento de resultados e eficiência</h3>
                     <p>Implementação de ações e práticas que visam maximizar os resultados e a eficiência
                         operacional da
@@ -204,16 +204,16 @@ error_reporting(E_ALL);
                         permitindo uma gestão sólida e organizada do fluxo de caixa, custos e despesas.</p>
                 </li>
 
-                <li>
-                    <img src="img/precificacao.svg" alt="">
+                <li >
+                    <img src="img/precificacao.svg" alt="" >
                     <h3>Avaliação da precificação</h3>
                     <p>Análise detalhada da estratégia de precificação dos produtos e/ou serviços, visando garantir
                         a
                         competitividade de mercado e a rentabilidade do negócio.</p>
                 </li>
 
-                <li>
-                    <img src="img/fluxoCaixa.svg" alt="">
+                <li >
+                    <img src="img/fluxoCaixa.svg" alt="" >
                     <h3>Fluxo de caixa</h3>
                     <p>Estudo de rentabilidade e viabilidade de negócios: Análise profunda da lucratividade e
                         sustentabilidade econômica de um negócio, considerando projeções financeiras e identificando
@@ -221,7 +221,7 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="img/DRE.svg" alt="">
+                    <img src="img/DRE.svg" alt="" >
                     <h3>D.R.E</h3>
                     <p>Relatório Gerencial que apresenta as operações financeiras da empresa, incluindo receitas,
                         custos, despesas, lucros e impostos, permitindo uma análise aprofundada do desempenho
@@ -420,7 +420,7 @@ error_reporting(E_ALL);
         <footer>
             <div class="grid-container">
                 <div class="logoFooter">
-                    <img src="./img/logoFooter.svg" alt="">
+                    <img src="./img/logoFooter.png" alt="">
                 </div>
                 <div class="services">
                     <h3>Serviços</h3>

@@ -12,7 +12,7 @@
 }
 
 :root {
-    --laranja: #4538f6;
+    --laranja: #F65A38;
     --fundoLandingPage: #F9F6F7;
     --corpoDoc: #F4EFF0;
     --textoEscuro: #1C1718;
@@ -188,6 +188,7 @@ header {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    
 }
 
 .grid-list li {
@@ -204,11 +205,12 @@ header {
     margin-top: 15px;
 }
 
-.grid-list li img {
+/* .grid-list li img {
     width: 100px;
     height: 150px;
     margin: 0 auto;
-}
+} */
+
 
 #aspas {
     width: calc(100% - 400px); /* Largura calculada relativa à margem */
@@ -261,13 +263,21 @@ header {
 
 footer {
     background-color: var(--laranja);
-    min-height: 40vh;
+    min-height: 35vh;
     padding: 20px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+footer img {
+    margin-top: 15%;
+    margin-right: 60px;
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .grid-container {
@@ -281,10 +291,8 @@ footer {
 .divider {
     border: none;
     border-top: 1px solid var(--corEscuraFooter);
-    width: 85%;
-    margin-top: 30px;
     width: 90%;
-    margin: 30px auto;
+    margin-top: 90px;
 }
 
 .footer-content {
@@ -297,7 +305,6 @@ footer {
     width: 100%;
     flex-wrap: wrap; /* Adicione esta linha para permitir que os elementos quebrem para uma nova linha */
 }
-
 .computec,
 .rights {
     display: flex;
@@ -323,10 +330,6 @@ footer {
     font-size: 16px;
 }
 
-.logoFooter {
-    grid-column: 1;
-    margin-right: 200px;
-}
 
 .services,
 .social,
@@ -486,13 +489,6 @@ i.fas.fa-user {
         align-items: center;
     }
 
-    .logoFooter {
-        margin-right: 0;
-    }
-
-    .logoFooter img {
-        width: 100%;
-    }
 
     .services,
     .social {
@@ -629,6 +625,21 @@ i.fas.fa-user {
     .newsletter input,
     .newsletter button {
         width: 100%;
-        max-width: 100%;
+        max-width: none; /* Remova a limitação máxima de largura */
     }
+
+    .services, .social {
+        grid-column: span 1;
+    }
+
+    footer img {
+        width: 100%;
+        max-width: 200px;
+        margin-top: 45px;
+    }
+
+    .computec img {
+        margin-bottom: 45px;
+    }
+
 }
