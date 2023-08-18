@@ -150,8 +150,8 @@ error_reporting(E_ALL);
                 </path>
             </svg>
 
-            <a href="#servicosHome">
-                <img src="./img/arrowgota.svg" alt="" srcset="">
+            <a href="#servicosHome" class="scroll-link">
+                <img class="animated-arrow" src="./img/arrowgota.svg" alt="" srcset="">
             </a>
         </section>
 
@@ -404,6 +404,7 @@ error_reporting(E_ALL);
             </div>
         </section>
 
+        <script src="./script/scroll.js"></script>
         <script src="./script/menuMobile.js"></script>
         <script src="ck/build/ckeditor.js"></script>
         <script src="./script/ckeditor.js"></script>

@@ -9,6 +9,7 @@
     text-decoration: none;
     list-style: none;
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -96,7 +97,7 @@ header {
 .landingPage {
     height: 100%;
     width: 100%;
-    min-height: 85vh;
+    min-height: 80vh;
     background-color: var(--fundoLandingPage);
     position: relative;
     display: grid;
@@ -109,6 +110,7 @@ header {
 
 .landingPage h1{
     color: var(--textoEscuro);
+    margin-top: 150px;
 }
 
 #icon1,
@@ -120,17 +122,17 @@ header {
 }
 
 #icon1 {
-    top: 25%; /* Ajuste a posição vertical conforme necessário */
+    top: 40%; /* Ajuste a posição vertical conforme necessário */
     left: 15%; /* Ajuste a posição horizontal conforme necessário */
 }
 
 #icon2 {
-    top: 32%; /* Ajuste a posição vertical conforme necessário */
+    top: 46%; /* Ajuste a posição vertical conforme necessário */
     right: 60%; /* Ajuste a posição horizontal conforme necessário */
 }
 
 #icon3 {
-    bottom: 48%; /* Ajuste a posição vertical conforme necessário */
+    bottom: 35%; /* Ajuste a posição vertical conforme necessário */
     left: 10%; /* Ajuste a posição horizontal conforme necessário */
 }
 
@@ -139,6 +141,7 @@ header {
     width: 650px;
     height: auto;
     margin: 100px;
+    margin-top: 180px;
 }
 
 #palavraSucesso,
@@ -162,14 +165,29 @@ header {
 
 .gota img {
     position: absolute;
-    top: 50%; /* Ajuste verticalmente */
-    left: 50%; /* Ajuste horizontalmente */
-    transform: translate(-50%, -50%); /* Centralizar o elemento */
-    width: 50px; /* Ajuste o tamanho conforme necessário */
-    height: 50px; /* Ajuste o tamanho conforme necessário */
-    z-index: 2; /* Garante que o SVG fique sobre a gota */
+    top: 0; /* Defina o topo como 0 para usar margens automáticas verticalmente */
+    left: 0; /* Defina a esquerda como 0 para usar margens automáticas horizontalmente */
+    right: 0; /* Defina a direita como 0 para usar margens automáticas horizontalmente */
+    bottom: 0; /* Defina a parte inferior como 0 para usar margens automáticas verticalmente */
+    margin: auto; /* Isso alinhará automaticamente a imagem ao centro vertical e horizontal */
+    width: 50px;
+    height: 50px;
+    z-index: 2;
 }
 
+
+.animated-arrow {
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px); /* Ajuste a distância de animação aqui */
+    }
+}
 
 
 #descricaoGeralh1 {
@@ -230,6 +248,10 @@ header {
 .grid-list p {
     font-weight: 300;
     color: var(--textoFooter);
+}
+
+.grid-list h3 {
+    margin-bottom: 15px;
 }
 
 
@@ -553,7 +575,7 @@ i.fas.fa-user {
     }
 
     #imagemLP {
-        width: 100%;
+        width: 60%;
         max-width: 400px;
     }
 
@@ -562,6 +584,23 @@ i.fas.fa-user {
     #numberHeader {
         display: none;
     }
+
+    #descricaoGeralh1 {
+        font-size: 6vw; /* Tamanho responsivo menor para h1 em telas menores */
+        margin-top: 10px; /* Ajuste o espaçamento responsivo */
+        margin-bottom: 10px; /* Ajuste o espaçamento responsivo */
+    }
+
+    .descricaoGeralp,
+    .descricaoFinalp {
+        font-size: 3vw; /* Tamanho responsivo menor para p em telas menores */
+    }
+
+    .grid-list {
+        grid-template-columns: 1fr; /* Uma coluna por linha em telas menores */
+        max-width: 100%; /* Ocupar a largura total da tela em telas menores */
+    }
+
 
     .navlista {
         display: none;
@@ -622,17 +661,17 @@ i.fas.fa-user {
     }
 
     #icon1 {
-        top: 18%;
+        top: 23%;
         left: 28%;
     }
 
     #icon2 {
-        top: 23%;
+        top: 29%;
         right: 11%;
     }
 
     #icon3 {
-        bottom: 62%;
+        bottom: 56%;
         left: 15%;
     }
 
