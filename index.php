@@ -121,7 +121,7 @@ error_reporting(E_ALL);
         <ul class="navlista">
             <li><a href="#">Serviços</a></li>
             <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="#">Download</a></li>
         </ul>
         <a href="#" id="numberHeader">(45) 99978-7572</a>
     </header>

@@ -387,6 +387,11 @@ footer {
     margin-top: 10px;
 }
 
+.newsletter input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .newsletter button {
     border-radius: 50px;
     cursor: pointer;
