@@ -27,7 +27,18 @@
         </ul>
         <a href="#" id="numberHeader">(45) 99978-7572</a>
     </header>
+    <main>
+        <p><span>Olá, sou Natal</span> Um empresário de sucesso com uma sólida experiência na indústria da tecnologia. Na Computec,
+            minha empresa de consultoria líder, desenvolvemos e implementamos um avançado sistema de gerenciamento de
+            entrada e saída. Nosso sistema é projetado para otimizar e aprimorar o fluxo de pessoas e recursos dentro
+            das organizações, oferecendo soluções eficientes e seguras para o controle de acesso.
 
+            Com nossa expertise em tecnologia e consultoria, ajudamos empresas a melhorar sua segurança, eficiência
+            operacional e satisfação do cliente por meio de um gerenciamento de entrada e saída inteligente. Nossa
+            abordagem personalizada e soluções inovadoras permitem que as empresas tenham um controle mais efetivo do
+            fluxo de pessoas, monitorando a entrada e saída de funcionários, visitantes e mercadorias de forma eficiente
+            e precisa. Na Computec, estamos comprometidos em fornecer sistemas de gerenciamento de entrada e saída de
+            ponta, que impulsionam o sucesso e a produtividade de nossos clientes.</p>
 
         <script src="../script/scroll.js"></script>
         <script src="../script/menuMobile.js"></script>
@@ -74,7 +85,7 @@
                 </div>
             </div>
 
-            <hr class="divider" style="background-color: #000000;">
+            <hr class="divider">
 
             <div class="footer-bottom">
                 <div class="computec">

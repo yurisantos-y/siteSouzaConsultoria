@@ -16,7 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = $conn->query($sql);
 
         if ($result && $result->num_rows > 0) {
-            echo "E-mail já cadastrado na newsletter.";
+            // O e-mail já está cadastrado, redirecionar para index.php
+            header("Location: index.php");
+            exit();
         } else {
             // Gerar um código de confirmação único
             $confirmationCode = uniqid();
@@ -27,24 +29,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 // Enviar e-mail de confirmação
                 $assunto = "Confirme sua inscrição na Newsletter";
                 $mensagem = "Clique no link abaixo para confirmar sua inscrição:\n";
-                $mensagem .= "http://localhost/siteSouzaConsultoria/confirmacao.php?code=$confirmationCode";
+                $mensagem .= "http://localhost/siteSouzaConsultoria/pages/confirmacao.php?code=$confirmationCode";
 
                 if (enviarEmail($email, $assunto, $mensagem)) {
-                    echo "Um e-mail de confirmação foi enviado para o seu endereço.";
+                    echo '<script>alert("Um e-mail de confirmação foi enviado para o seu endereço.");</script>';
                 } else {
-                    echo "Erro ao enviar o e-mail de confirmação.";
+                    echo '<script>alert("Erro ao enviar o e-mail de confirmação.");</script>';
                 }
             } else {
-                echo "Erro ao cadastrar o e-mail: " . $conn->error;
+                echo '<script>alert("Erro ao cadastrar o e-mail: ' . $conn->error . '");</script>';
             }
         }
 
         // Feche a conexão
         $conn->close();
     } else {
-        echo "E-mail inválido!";
+        echo '<script>alert("E-mail inválido!");</script>';
     }
 } else {
-    echo "Formulário inválido!";
+    echo '<script>alert("Formulário inválido!");</script>';
 }
 ?>

@@ -32,17 +32,17 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["code"])) {
 
         $updateSql = "UPDATE newsletter_emails SET confirmed = 1 WHERE email = '$email'";
         if ($conn->query($updateSql) === TRUE) {
-            echo "E-mail confirmado com sucesso. Obrigado por se inscrever na newsletter!";
+            echo '<script>alert("E-mail confirmado com sucesso. Obrigado por se inscrever na newsletter!");</script>';
         } else {
-            echo "Erro ao confirmar o e-mail: " . $conn->error;
+            echo '<script>alert("Erro ao confirmar o e-mail: ' . $conn->error . '");</script>';
         }
     } else {
-        echo "Código de confirmação inválido.";
+        echo '<script>alert("Código de confirmação inválido.");</script>';
     }
 
     // Feche a conexão
     $conn->close();
 } else {
-    echo "Requisição inválida.";
+    echo '<script>alert("Requisição inválida.");</script>';
 }
 ?>

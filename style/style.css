@@ -410,8 +410,11 @@ footer {
 .divider {
     width: 100%;
     height: 1px;
-    background-color: var(--textoEscuro);
+    background-color: #232323;
     margin: 20px 0;
+    border: none;
+    margin: 0;
+    padding: 0;
 }
 
 .computec {
