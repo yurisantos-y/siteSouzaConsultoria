@@ -1,5 +1,5 @@
 <?php
-require_once 'index.php';  // Importar as funções e constantes do index.php
+require_once './index.php';  // Importar as funções e constantes do index.php
 
 $conn = new mysqli(HOST, USER, PASS, BASE);
 if ($conn->connect_error) {

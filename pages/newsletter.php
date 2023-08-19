@@ -1,5 +1,5 @@
 <?php
-require_once 'index.php';  // Importar as funções e constantes do index.php
+require_once './index.php';  // Importar as funções e constantes do index.php
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["email"]) && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
