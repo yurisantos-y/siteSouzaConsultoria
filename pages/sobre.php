@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/sobre.css">
     <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
     <title>Prospere | Consultoria</title>
 </head>
@@ -28,17 +28,29 @@
         <a href="#" id="numberHeader">(45) 99978-7572</a>
     </header>
     <main>
-        <p><span>Olá, sou Natal</span> Um empresário de sucesso com uma sólida experiência na indústria da tecnologia. Na Computec,
-            minha empresa de consultoria líder, desenvolvemos e implementamos um avançado sistema de gerenciamento de
-            entrada e saída. Nosso sistema é projetado para otimizar e aprimorar o fluxo de pessoas e recursos dentro
-            das organizações, oferecendo soluções eficientes e seguras para o controle de acesso.
 
-            Com nossa expertise em tecnologia e consultoria, ajudamos empresas a melhorar sua segurança, eficiência
-            operacional e satisfação do cliente por meio de um gerenciamento de entrada e saída inteligente. Nossa
-            abordagem personalizada e soluções inovadoras permitem que as empresas tenham um controle mais efetivo do
-            fluxo de pessoas, monitorando a entrada e saída de funcionários, visitantes e mercadorias de forma eficiente
-            e precisa. Na Computec, estamos comprometidos em fornecer sistemas de gerenciamento de entrada e saída de
-            ponta, que impulsionam o sucesso e a produtividade de nossos clientes.</p>
+        <div class="conteudo">
+            <div class="imagemNatal">
+                <img src="../img/natal.jpg" alt="Natal">
+            </div>
+            <p class="paragrafo"><span>Olá, sou Natal</span> Um empresário de sucesso com uma sólida experiência na
+                indústria da tecnologia. Na Computec,
+                minha empresa de consultoria líder, desenvolvemos e implementamos um avançado sistema de gerenciamento
+                de
+                entrada e saída. Nosso sistema é projetado para otimizar e aprimorar o fluxo de pessoas e recursos
+                dentro
+                das organizações, oferecendo soluções eficientes e seguras para o controle de acesso.
+
+                Com nossa expertise em tecnologia e consultoria, ajudamos empresas a melhorar sua segurança, eficiência
+                operacional e satisfação do cliente por meio de um gerenciamento de entrada e saída inteligente. Nossa
+                abordagem personalizada e soluções inovadoras permitem que as empresas tenham um controle mais efetivo
+                do
+                fluxo de pessoas, monitorando a entrada e saída de funcionários, visitantes e mercadorias de forma
+                eficiente
+                e precisa. Na Computec, estamos comprometidos em fornecer sistemas de gerenciamento de entrada e saída
+                de
+                ponta, que impulsionam o sucesso e a produtividade de nossos clientes.</p>
+        </div>
 
         <script src="../script/scroll.js"></script>
         <script src="../script/menuMobile.js"></script>
