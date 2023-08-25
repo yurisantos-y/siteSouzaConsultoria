@@ -1,3 +1,23 @@
+<?php
+session_start();
+$isAdmin = isset($_SESSION['adm']) && $_SESSION['adm'];$adm = false;
+if (isset($_SESSION['adm']) && $_SESSION['adm']) {
+    $adm = true;
+}
+
+// Conexão com o banco de dados
+define('HOST', 'localhost');
+define('USER', 'root');
+define('PASS', '');
+define('BASE', 'sisprospere');
+
+$conn = new mysqli(HOST, USER, PASS, BASE);
+if ($conn->connect_error) {
+    die("Falha na conexão com o banco de dados: " . $conn->connect_error);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,25 +48,44 @@
     <section class="download">
         <h1>Baixe as planilhas</h1>
         <div class="tabelaDownload">
-            <ol>
-                <li>
-                    <a href="/planilhas/planilha1.xlsx" download>
-                        <img src="../img/download.svg" alt="imagem de download">
-                    </a>
-                    <h3>Planilha 1</h3>
-                    <p><a href="/planilhas/planilha1.xlsx"></p>
-                </li>
-                <li>
-                    <a href="/planilhas/planilha2.xlsx" download>
-                        <img src="../img/download.svg" alt="imagem de download">
-                    </a>
-                    <h3>Planilha 2</h3>
-                    <p><a href="/planilhas/planilha2.xlsx"></p>
-                </li>
-                <!-- Adicione mais planilhas conforme necessário -->
+        <ol>
+                <?php
+
+                $sql = "SELECT nome, caminho FROM planilhas";
+                $sql = "SELECT nome, caminho FROM arquivos"; // Usando o nome correto da tabela "arquivos"
+                $result = $conn->query($sql);
+
+                if ($result === false) {
+                    echo "Erro na consulta SQL: " . $conn->error;
+                } elseif ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $nome = $row['nome'];
+                        $caminho = $row['caminho'];
+                        echo "<li>";
+                        echo "<a href=\"$caminho\" download><img src=\"../img/download.svg\" alt=\"imagem de download\"></a>";
+                        echo "<h3>$nome</h3>";
+                        echo "</li>";
+                    }
+                } else {
+                    echo "Nenhum resultado encontrado.";
+                }
+
+                $conn->close();
+
+                ?>
             </ol>
         </div>
     </section>
+    <section class="upload">
+        <?php if ($isAdmin): ?>
+        <h2>Enviar Nova Planilha</h2>
+        <form id="uploadForm" action="upload_planilha.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="planilha" accept=".xlsx" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <?php endif; ?>
+    </section>
+
 
     <footer>
         <div class="footer-content">
