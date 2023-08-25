@@ -23,7 +23,7 @@
         <ul class="navlista">
             <li><a href="index.php#servicosHome">Serviços</a></li>
             <li><a href="index.php">Início</a></li>
-            <li><a href="#">Download</a></li>
+            <li><a href="../pages/download.php">Download</a></li>
         </ul>
         <a href="#" id="numberHeader">(45) 99978-7572</a>
     </header>
