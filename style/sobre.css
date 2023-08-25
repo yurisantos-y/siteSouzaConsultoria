@@ -21,6 +21,15 @@
     --branco: #FFFFFF;
 }
 
+.centered-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura da janela de visualização */
+}
+
+
 /* Header Styles */
 
 header {
@@ -97,20 +106,37 @@ header {
 }
 
 .paragrafo {
-    max-width: 40%; /* Ajuste o valor conforme necessário */
+    max-width: 45%;
     text-align: center; /* Alinhar o texto ao centro */
-    margin: 0 20px; /* Espaçamento entre a imagem e o parágrafo */
-    display: flex;
-    align-items: center; /* Alinhar verticalmente */
-    justify-content: flex-start; /* Alinhar à esquerda */
+    margin: 20px; /* Espaçamento uniforme em todas as direções */
+    margin-bottom: 16%;
+    color: var(--textoFooter);
+    font-weight: 500;
 }
+
+
+.destaque {
+    font-size: 2.4rem; /* Tamanho de fonte maior */
+    font-weight: bold; /* Texto em negrito */
+    color: var(--textoEscuro); /* Cor laranja definida anteriormente */
+    margin-right: 45px;
+}
+
+
 
 .imagemNatal {
     display: flex;
-    align-items: center; /* Alinhar verticalmente */
-    justify-content: flex-end; /* Alinhar à direita */
-    margin-top: 20px; /* Adicione um espaçamento superior */
-    flex: 1; /* Ocupar espaço restante */
+    align-items: center;
+    justify-content: center; /* Centralizar horizontalmente */
+    margin-top: 4%;
+    margin-bottom: 18%; /* Adicione espaço inferior */
+}
+
+.imagemNatal img {
+    width: 60%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 30px 0px 60px rgba(0, 0, 0, 0.205);
 }
 
 
@@ -295,5 +321,158 @@ i.fas.fa-user {
 
 .whatsapp-icon:hover {
     background-color: #1eac52;
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    .navlista a {
+        margin-left: 15px;
+    }
+
+    .grid-list {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services,
+    .social,
+    .newsletter {
+        margin-top: 20px;
+        flex-basis: calc(50% - 10px);
+    }
+
+    .services h3,
+    .social h3 {
+        margin-top: 10px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    #numberHeader {
+        display: none;
+    }
+
+    .grid-list {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .navlista {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background-color: var(--fundoLandingPage);
+        padding: 20px;
+        z-index: 999;
+    }
+
+    .navlista.active {
+        display: flex;
+    }
+
+    .mobile-menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .bar {
+        width: 30px;
+        height: 5px;
+        background-color: var(--textoEscuro);
+        transition: 0.3s;
+    }
+
+    .navlista li {
+        margin: 10px 0;
+    }
+
+    .conteudo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .paragrafo {
+        max-width: 100%;
+        margin: 10px;
+        margin-bottom: 10%;
+        margin-top: 75px;
+    }
+
+    .destaque {
+        font-size: 2rem;
+        margin-right: 0;
+    }
+
+    .imagemNatal {
+        margin-top: 2%;
+        margin-bottom: 100%;
+    }
+
+    .imagemNatal img {
+        width: 90%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        width: 45vw;
+        height: 45vw;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .logoFooter img {
+        margin-top: 20px;
+    }
+
+    .services,
+    .social {
+        display: none;
+    }
+
+
+    .services,
+    .social,
+    .newsletter {
+        flex-basis: 100%;
+    }
+
+    .newsletter input,
+    .newsletter button {
+        max-width: 100%;
+    }
+
+    .newsletter h3 {
+        margin-top: 10px;
+        width: 2vw;
+    }
+
 }
 
