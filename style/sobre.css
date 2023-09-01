@@ -21,82 +21,21 @@
     --branco: #FFFFFF;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
 .centered-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura da janela de visualização */
+    min-height: 63vh; /* Garante que o corpo ocupe pelo menos a altura da janela de visualização */
 }
 
-
-/* Header Styles */
-
-header {
-    margin-top: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 20px 9%;
-    background: rgb(249, 246, 247);
-    background: linear-gradient(180deg, rgba(249, 246, 247, 1) 1%, rgba(255, 255, 255, 0) 100%);
-}
-
-.navlista{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 30px;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.navlista-links {
-    display: flex; /* Exibir os itens da lista em linha */
-    align-items: center; /* Alinhar verticalmente no centro */
-}
-
-.navlista li {
-    padding: 20px; /* Mova o padding de .navlista para os itens da lista aqui */
-    margin-right: 20px;
-}
-
-.navlista a {
-    border-bottom: 2px solid transparent;
-    transition: all .55s ease-in;
-    color: var(--textoEscuro);
-}
-
-
-.navlista a:hover {
-    border-bottom: 2px solid var(--textoEscuro);
-}
-
-#numberHeader {
-    margin-left: auto;
-    color: var(--laranja);
-    font-weight: 700;
-}
-
-/* Mobile Menu Styles */
-.mobile-menu-icon {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-}
-
-.bar {
-    width: 30px;
-    height: 5px;
-    background-color: var(--textoEscuro);
-    transition: 0.3s;
-}
 
 .conteudo {
     display: flex;
@@ -109,7 +48,6 @@ header {
     max-width: 45%;
     text-align: center; /* Alinhar o texto ao centro */
     margin: 20px; /* Espaçamento uniforme em todas as direções */
-    margin-bottom: 16%;
     color: var(--textoFooter);
     font-weight: 500;
 }
@@ -122,14 +60,11 @@ header {
     margin-right: 45px;
 }
 
-
-
 .imagemNatal {
     display: flex;
     align-items: center;
     justify-content: center; /* Centralizar horizontalmente */
     margin-top: 4%;
-    margin-bottom: 18%; /* Adicione espaço inferior */
 }
 
 .imagemNatal img {
@@ -139,154 +74,21 @@ header {
     box-shadow: 30px 0px 60px rgba(0, 0, 0, 0.205);
 }
 
+.content {
+    flex-grow: 1; /* Faz com que o conteúdo principal cresça para preencher o espaço disponível */
+}
 
 footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: var(--laranja);
-    color: var(--textoFooter);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-content {
-    flex-grow: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1000px;
-    width: 100%;
     padding: 20px;
-    box-sizing: border-box;
-}
-
-.footer-bottom {
-    max-width: 1000px;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.logoFooter img {
-    width: 200px;
-    height: auto;
-    margin-top: 55px;
-}
-
-.services,
-.social,
-.newsletter {
-    flex-basis: calc(25% - 20px);
-}
-
-.social a,
-.services a {
     color: var(--textoFooter);
-    display: block;
-    margin-top: 10px;
-}
-
-
-.social h3,
-.services h3 {
-    color: var(--textoFooter);
-}
-
-.newsletter {
     text-align: center;
 }
 
-#textoNewsletter{
-    font-size: 20px;
-    color: var(--textoFooter);
-    font-weight: 500;
-    text-align: center; /* Alinhar ao centro horizontalmente */
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
-}
-
-.newsletter h3 {
-    margin-top: 20px;
-}
-
-.newsletter input {
-    padding: 6px;
-    background-color: transparent;
-    border-radius: 50px;
-    border: 1px solid var(--corEscuraFooter);
-    color: var(--corEscuraFooter);
-    width: 100%;
-    max-width: 250px;
-    margin-top: 10px;
-}
-
-.newsletter input:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-.newsletter button {
-    border-radius: 50px;
-    cursor: pointer;
-    padding: 5px;
-    width: 100%;
-    max-width: 120px;
-    margin-top: 10px;
-    color: var(--corpoDoc);
-    background-color: var(--corEscuraFooter);
-    border: none;
-}
-
-.newsletter button:hover {
-    background-color: #313131;
-}
-
-.divider {
-    width: 95%;
-    height: 1px;
-    background-color: #232323;
-    border: none;
-    margin-top: 60px;
-}
-
-.computec {
-    display: flex;
-    align-items: center; /* Alinhar verticalmente no centro */
-}
-
-.computec img {
-    width: 40px; /* Ajuste o tamanho conforme necessário */
-    height: auto;
-    margin-right: 10px; /* Adicione um espaço entre a imagem e o cabeçalho */
-}
-
-.computec h3 {
-    margin: 0; /* Remova as margens padrão */
-    color: var(--textoEscuro);
-    font-size: 18px; /* Ajuste o tamanho conforme necessário */
-    font-weight: 600;
-}
-
-/* Posicionamento do logotipo "computec" */
-#logoComputec {
-    margin-right: auto;
-    margin-left: 9%;
-}
-
-/* Posicionamento do botão "right" */
-#right {
-    margin-left: auto;
-    margin-right: 9%;
-}
 
 /* Floating WhatsApp Icon Styles */
 
@@ -324,91 +126,10 @@ i.fas.fa-user {
 }
 
 @media screen and (max-width: 1024px) {
-    header {
-        padding: 20px 5%;
-    }
-
-    .navlista a {
-        margin-left: 15px;
-    }
-
-    .grid-list {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .services,
-    .social,
-    .newsletter {
-        margin-top: 20px;
-        flex-basis: calc(50% - 10px);
-    }
-
-    .services h3,
-    .social h3 {
-        margin-top: 10px;
-    }
 }
 
 
 @media screen and (max-width: 768px) {
-    header {
-        padding: 20px 5%;
-    }
-
-    #numberHeader {
-        display: none;
-    }
-
-    .grid-list {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-    }
-
-    .navlista {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        background-color: var(--fundoLandingPage);
-        padding: 20px;
-        z-index: 999;
-    }
-
-    .navlista.active {
-        display: flex;
-    }
-
-    .mobile-menu-icon {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 25px;
-        cursor: pointer;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-    }
-
-    .bar {
-        width: 30px;
-        height: 5px;
-        background-color: var(--textoEscuro);
-        transition: 0.3s;
-    }
-
-    .navlista li {
-        margin: 10px 0;
-    }
-
     .conteudo {
         flex-direction: column;
         align-items: center;
@@ -428,18 +149,25 @@ i.fas.fa-user {
 
     .imagemNatal {
         margin-top: 2%;
-        margin-bottom: 100%;
+        margin-bottom: 10%;
     }
 
     .imagemNatal img {
         width: 90%;
     }
 
+    footer {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh; /* Ocupar 100% da altura da janela de visualização */
+        width: 100%; /* Ocupar 100% da largura */
+    }
+
     .footer-content {
         flex-direction: column;
         align-items: center;
-        width: 45vw;
-        height: 45vw;
+        width: 100%; /* Altere a largura para ocupar toda a largura disponível */
     }
 
     .footer-bottom {
@@ -457,11 +185,10 @@ i.fas.fa-user {
         display: none;
     }
 
-
     .services,
     .social,
     .newsletter {
-        flex-basis: 100%;
+        flex-basis: auto; /* Permita que os elementos cresçam automaticamente */
     }
 
     .newsletter input,
@@ -471,8 +198,6 @@ i.fas.fa-user {
 
     .newsletter h3 {
         margin-top: 10px;
-        width: 2vw;
+        width: auto; /* Permita que o elemento cresça conforme necessário */
     }
-
 }
-
