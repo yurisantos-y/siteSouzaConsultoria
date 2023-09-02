@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "projetoconsultoria",
+  "private_key_id": "34a5dd726b6f10914095e467fd90bb5ef79230c3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDHQdA+LSIgehNP\n0fPuFj81Q+xSQCiqDWgb8jAR371g/rKfG0+F3uTsrzbAr2rjuBXS3zpaqyAXKAPI\ni4gifVXDJoMnlVZhR7h2+KJr/PX/lrloJdEZpPU23M+B1DLd9Vpjbx92J8T8d9N/\n98Qzu+4snxbesVNjjqYCy8Yu5NLog1UmdnOpNadNCJgFOAS3OET0Ox5j9RGQPpNi\nLLBuZMyreyBFnscPIR86EvdXmxsA7NxPeWf7tN6OI2HbCGf0LPTeIVVGwfurZX0A\n/Brjiap8Pxnl2yYwzUHHUbQoDiGegWbzobwOUWIrnqdscANdCS6m8SC3RVZWkpNB\nftt2GoxBAgMBAAECggEAAnm2JsaYZGFF3wWNh28/8edGDuPIiYvM979pkthF7df+\nM7ky8sehDhJzbn+DZ0C2xzHSI5UZiwYajW3T1zNZytjOM3JA0mix4Ur/mBI6g2ZN\nx34kR9J3gCrsOkl+yAiDuuVjFXyDH0yVDGOBbM/ccrIXhnTbI4sOs41Q6Q1bVCuD\nYBmOrtyQ4UjljzBZU8oohIQ6Ea+WmF6iv7ygxyaYuToSf6WysNMRHQJpEtNtCd9b\nwgrM9zglWOL9zaDmIM8OXa06RqVWDSoYb60nkGx5YKGVn4/k1UMd210wqPxGeT58\nx+Sol0l6YgtZF7JDMBOYrLfF3w3QJ7/lnx9DDAomAQKBgQD80Ly7h6iCa6TpL6XR\neLJxug2SZXfVnu/hWrNWM4a79o197nyUMbQRnQDo6uSyaVBMZ4f8QGM//3SvKv0j\nyP3T6QyNENAbiQmX/K6Txn6Q4VCk9CXgn53CBICb4CoiMjbfJ9d+JSe6JJ9QHHow\n6iDMXKF+g8VCInEnilniwljCwQKBgQDJxF1n5lyCXsbzzcJNTD5436o1attk8ue5\nPfeMuai2MEQq2WaE2AoCcnpwSxvQRybE9P4sEwIMmHDkrsMVkZHDewkfvSu5+Iih\nCRG7NGCWawNxdYZgf+NuFKuNi4gex9wUyzMqiCkwskkrAQG/ZfJYzE1xo0dqtZ4S\nRoTgZY+pgQKBgQDu3sMUZS8AW3jrosuHygTAk8xzAFBjlNKOGMbNsc2iF2jFDerD\nktrSsYfEivwe3oaySjggTS35sAKt525au3OpH89uEe6vtaFM68B/e9LmTR2HXe/T\n9rx2Lw7dOMZWnR9fZiOj2rNYm3WzmdSSFwV6UiN8iEB/Jk/Hzl7zdDGtgQKBgEAC\nOru2egyl8qnv0b9h+8Ou+Tl/D+EDqn266ejMEXjS8R1C4OIuA2bpWGx9d3Jo0CTV\nsDjdQt4qEk6KHrud9cc1Jhzaj5+s9/NWhDiGkknF407AQQQmLkmC5zW9WU6iivBR\n0oagsaiQNuQcqqhEuFBxZ/QwH3z75wzXMFpb/eqBAoGADlfE7vvr2cXGnkQOWEW+\n6ujzwU1f+WmXc7a526+3y2t82KINzknowXco5RVRGkoDOH3llc6c6C2ZVWB+m1y7\nHQnnu0+IOBvkKVP/OxPVCmLrj6bhOPatFqdcEKpiGKOWiOgzvnpHkEpit92Xm0ya\npRRs1SCBlqbIEwzUfHrQ1b8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "consultoria@projetoconsultoria.iam.gserviceaccount.com",
+  "client_id": "109012755732354542221",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/consultoria%40projetoconsultoria.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

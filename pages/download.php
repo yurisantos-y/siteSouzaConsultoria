@@ -26,13 +26,14 @@ if ($conn->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style/download.css">
+    <link rel="stylesheet" href="../style/style.css">
     <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
     <title>Prospere | Consultoria</title>
 </head>
 
-<body>
+<body class="centered-body">
     <header>
-        <a href="#" class="logoTopo"><img src="../img/logoLaranja.svg" alt="Logo Laranja"></a>
+        <a href="index.php" class="logoTopo"><img src="../img/logoLaranja.svg" alt="Logo Laranja"></a>
         <div class="mobile-menu-icon">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -40,37 +41,37 @@ if ($conn->connect_error) {
         </div>
         <ul class="navlista">
             <li><a href="index.php#servicosHome">Serviços</a></li>
-            <li><a href="../pages/sobre.php">Sobre</a></li>
+            <li><a href="index.php">Início</a></li>
             <li><a href="../pages/download.php">Download</a></li>
         </ul>
         <a href="#" id="numberHeader">(45) 99978-7572</a>
     </header>
+
     <section class="download">
         <h1>Baixe as planilhas</h1>
         <div class="tabelaDownload">
-        <ol>
+            <ol>
                 <?php
+                    $sql = "SELECT nome, caminho FROM planilhas";
+                    $result = $conn->query($sql);
 
-                $sql = "SELECT nome, caminho FROM planilhas";
-                $sql = "SELECT nome, caminho FROM arquivos"; // Usando o nome correto da tabela "arquivos"
-                $result = $conn->query($sql);
-
-                if ($result === false) {
-                    echo "Erro na consulta SQL: " . $conn->error;
-                } elseif ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $nome = $row['nome'];
-                        $caminho = $row['caminho'];
-                        echo "<li>";
-                        echo "<a href=\"$caminho\" download><img src=\"../img/download.svg\" alt=\"imagem de download\"></a>";
-                        echo "<h3>$nome</h3>";
-                        echo "</li>";
+                    if ($result === false) {
+                        echo "Erro na consulta SQL: " . $conn->error;
+                    } elseif ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $nome = $row['nome'];
+                            $caminho = $row['caminho'];
+                            echo "<li>";
+                            echo "<a href=\"download.php?caminho=$caminho\" download><img src=\"../img/download.svg\" alt=\"imagem de download\"></a>";
+                            echo "<h3>$nome</h3>";
+                            echo "</li>";
+                        
+                        }
+                    } else {
+                        echo "Nenhum resultado encontrado.";
                     }
-                } else {
-                    echo "Nenhum resultado encontrado.";
-                }
 
-                $conn->close();
+                    $conn->close();
 
                 ?>
             </ol>
@@ -79,11 +80,12 @@ if ($conn->connect_error) {
     <section class="upload">
         <?php if ($isAdmin): ?>
         <h2>Enviar Nova Planilha</h2>
-        <form id="uploadForm" action="upload_planilha.php" method="POST" enctype="multipart/form-data">
+        <form id="uploadForm" action="upload.php" method="POST" enctype="multipart/form-data">
             <input type="file" name="planilha" accept=".xlsx" required>
             <button type="submit">Enviar</button>
         </form>
         <?php endif; ?>
+
     </section>
 
 

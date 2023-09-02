@@ -1,59 +1,43 @@
 <?php
-// Verifica se o usuário está autenticado como administrador
-session_start();
-if (!isset($_SESSION['adm']) || !$_SESSION['adm']) {
-    echo json_encode(array("success" => false, "message" => "Acesso não autorizado."));
-    exit();
-}
+require '../vendor/autoload.php';
 
-// Diretório de destino para o upload das planilhas
-$uploadDir = "/caminho/para/planilhas"; // Defina o diretório correto
+// Configurar as credenciais
+putenv('GOOGLE_APPLICATION_CREDENTIALS=../projetoconsultoria.json');
 
-// Verifica se o arquivo foi enviado com sucesso
-if (!isset($_FILES['planilha']) || $_FILES['planilha']['error'] !== UPLOAD_ERR_OK) {
-    echo json_encode(array("success" => false, "message" => "Erro ao enviar o arquivo."));
-    exit();
-}
+// Criar um cliente do Google Drive
+$client = new Google_Client();
+$client->useApplicationDefaultCredentials();
+$client->setScopes(Google_Service_Drive::DRIVE);
 
-// Verifica se o arquivo é uma planilha válida (exemplo: somente .xlsx)
-$allowedExtensions = array("xlsx"); // Defina as extensões permitidas
-$uploadedExtension = strtolower(pathinfo($_FILES['planilha']['name'], PATHINFO_EXTENSION));
-if (!in_array($uploadedExtension, $allowedExtensions)) {
-    echo json_encode(array("success" => false, "message" => "Tipo de arquivo não suportado."));
-    exit();
-}
+// Configurar a verificação de certificado SSL
+$client->setHttpClient(new GuzzleHttp\Client([
+    'verify' => false, // Defina isso como true para habilitar a verificação de certificado
+]));
 
-// Gere um nome único para o arquivo
-$newFileName = uniqid("planilha_") . "." . $uploadedExtension;
+$service = new Google_Service_Drive($client);
 
-// Move o arquivo para o diretório de destino
-if (!move_uploaded_file($_FILES['planilha']['tmp_name'], $uploadDir . "/" . $newFileName)) {
-    echo json_encode(array("success" => false, "message" => "Erro ao mover o arquivo."));
-    exit();
-}
+// Nome do arquivo a ser enviado
+$nomeArquivo = 'planilha.xlsx';
 
-// Conexão com o banco de dados
-define('HOST', 'localhost');
-define('USER', 'root');
-define('PASS', '');
-define('BASE', 'sisprospere');
+// Caminho local para o arquivo
+$caminhoLocalArquivo = '../planilhas/' . $nomeArquivo;
 
-$conn = new mysqli(HOST, USER, PASS, BASE);
-if ($conn->connect_error) {
-    echo json_encode(array("success" => false, "message" => "Falha na conexão com o banco de dados."));
-    exit();
-}
+// ID da pasta "php" no seu Google Drive (substitua pelo ID correto)
+$pastaPhpId = '1W3B428MD3XWBUz4cFbzwHe2TeegP-zma';
 
-// Insere informações sobre a nova planilha no banco de dados
-$planilhaNome = $_FILES['planilha']['name'];
-$planilhaCaminho = $uploadDir . "/" . $newFileName;
+// Upload do arquivo para a pasta "php" no Google Drive
+$fileMetadata = new Google_Service_Drive_DriveFile([
+    'name' => $nomeArquivo,
+    'parents' => [$pastaPhpId], // Defina o ID da pasta como destino
+]);
 
-$sql = "INSERT INTO planilhas (nome, caminho) VALUES ('$planilhaNome', '$planilhaCaminho')";
-if ($conn->query($sql) === TRUE) {
-    echo json_encode(array("success" => true, "message" => "Planilha enviada com sucesso e registrada no banco de dados!"));
-} else {
-    echo json_encode(array("success" => false, "message" => "Erro ao inserir os dados no banco de dados."));
-}
+$content = file_get_contents($caminhoLocalArquivo);
+$file = $service->files->create($fileMetadata, [
+    'data' => $content,
+    'mimeType' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'uploadType' => 'multipart',
+]);
 
-$conn->close();
+// Imprimir o ID do arquivo no Google Drive
+echo 'Arquivo ID: ' . $file->id;
 ?>
