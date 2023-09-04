@@ -1,4 +1,23 @@
 <?php
+
+require '../vendor/autoload.php';
+
+// Configurar as credenciais
+putenv('GOOGLE_APPLICATION_CREDENTIALS=../planilhaprosp.json');
+
+// Criar um cliente do Google Drive
+$client = new Google_Client();
+$client->useApplicationDefaultCredentials();
+$client->setScopes(Google_Service_Drive::DRIVE);
+
+// Configurar a verificação de certificado SSL
+$client->setHttpClient(new GuzzleHttp\Client([
+    'verify' => false, // Defina isso como true para habilitar a verificação de certificado
+]));
+
+$service = new Google_Service_Drive($client);
+
+
 session_start();
 $isAdmin = isset($_SESSION['adm']) && $_SESSION['adm'];$adm = false;
 if (isset($_SESSION['adm']) && $_SESSION['adm']) {
@@ -52,29 +71,28 @@ if ($conn->connect_error) {
         <div class="tabelaDownload">
             <ol>
                 <?php
-                    $sql = "SELECT nome, caminho FROM planilhas";
-                    $result = $conn->query($sql);
+                    // ID da pasta no Google Drive que contém os arquivos (substitua pelo ID correto)
+                    $pastaPhpId = '1Vn9NFv7VNQUfMpjLmbQxerdVhN2CDp1W';
 
-                    if ($result === false) {
-                        echo "Erro na consulta SQL: " . $conn->error;
-                    } elseif ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            $nome = $row['nome'];
-                            $caminho = $row['caminho'];
-                            echo "<li>";
-                            echo "<a href=\"download.php?caminho=$caminho\" download><img src=\"../img/download.svg\" alt=\"imagem de download\"></a>";
-                            echo "<h3>$nome</h3>";
-                            echo "</li>";
+                    // Use a API do Google Drive para listar os arquivos na pasta
+                    $results = $service->files->listFiles([
+                        'q' => "'$pastaPhpId' in parents",
+                    ]);
+
+                    // Loop através dos resultados e gere links de download
+                    foreach ($results as $file) {
+                        $nome = $file->getName();
+                        $id = $file->getId();
+                        $downloadUrl = "https://drive.google.com/uc?id=$id";
                         
-                        }
-                    } else {
-                        echo "Nenhum resultado encontrado.";
+                        echo "<li>";
+                        echo "<a href=\"$downloadUrl\" download><img src=\"../img/download.svg\" alt=\"imagem de download\"></a>";
+                        echo "<h3>$nome</h3>";
+                        echo "</li>";
                     }
-
-                    $conn->close();
-
                 ?>
             </ol>
+
         </div>
     </section>
     <section class="upload">

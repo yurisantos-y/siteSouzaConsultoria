@@ -16,28 +16,33 @@ $client->setHttpClient(new GuzzleHttp\Client([
 
 $service = new Google_Service_Drive($client);
 
-// Nome do arquivo a ser enviado
-$nomeArquivo = 'planilha.xlsx';
-
-// Caminho local para o arquivo
-$caminhoLocalArquivo = '../planilhas/' . $nomeArquivo;
-
 // ID da pasta "php" no seu Google Drive (substitua pelo ID correto)
 $pastaPhpId = '1Vn9NFv7VNQUfMpjLmbQxerdVhN2CDp1W';
 
-// Upload do arquivo para a pasta "php" no Google Drive
-$fileMetadata = new Google_Service_Drive_DriveFile([
-    'name' => $nomeArquivo,
-    'parents' => [$pastaPhpId], // Defina o ID da pasta como destino
-]);
+if (isset($_FILES['planilha']) && $_FILES['planilha']['error'] === UPLOAD_ERR_OK) {
+    // Nome do arquivo original que está sendo enviado pelo usuário
+    $nomeArquivo = $_FILES['planilha']['name'];
 
-$content = file_get_contents($caminhoLocalArquivo);
-$file = $service->files->create($fileMetadata, [
-    'data' => $content,
-    'mimeType' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    'uploadType' => 'multipart',
-]);
+    // Caminho local para o arquivo temporário
+    $caminhoLocalArquivo = $_FILES['planilha']['tmp_name'];
 
-// Imprimir o ID do arquivo no Google Drive
-echo 'Arquivo ID: ' . $file->id;
+    // Upload do arquivo para a pasta "php" no Google Drive
+    $fileMetadata = new Google_Service_Drive_DriveFile([
+        'name' => $nomeArquivo, // Mantém o nome original do arquivo
+        'parents' => [$pastaPhpId], // Defina o ID da pasta como destino
+    ]);
+
+    $content = file_get_contents($caminhoLocalArquivo);
+    $file = $service->files->create($fileMetadata, [
+        'data' => $content,
+        'mimeType' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'uploadType' => 'multipart',
+    ]);
+
+    // Imprimir o ID do arquivo no Google Drive
+    echo 'Arquivo ID: ' . $file->id;
+} else {
+    // Ocorreu um erro no upload do arquivo
+    echo 'Ocorreu um erro no upload do arquivo.';
+}
 ?>
