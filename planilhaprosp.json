@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "planilhaprosp",
+  "private_key_id": "77fc20fdfbc46a480035a665ac790f45bc4db3fc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCxdAv7yX3C3z8M\nExvqiRY9xElURpHJVw8/vkYsDots/h2HwHdv2c0pgSlJ5avpHreCpRFho9BUZWcx\n2mJFbWPox1MxdqV3tOv0+VoxLfm0axzdt/JBunjT4j4I2YX7XRoxx3YKzRVsqBvS\nRD0Tz3Z92X1oJTT1/xMF8iIQKIBta6f6nmCOPV40KwtCbLD9014Pm4Ozuf8AQRPm\nGunG0sJ4S1bmsa/O2PNezw0A5WP5DgLXAPWiwcXuOZwB5lcVoroyrPEx/wACoM3s\nA/1j5Bcp9DwzG2BE1sCROpDajsFI07li63SOLBLPs1oNzYh21mUDH9dIWWWAN6Af\n0PEOUmQ3AgMBAAECggEABhIeGpzG4yTAnAcVxj0gtJs/3WoOoqJRcoLDMXk2k1N8\nOUDAGNZULIrvYLpQzDom2O0Q2sWq27kslxu/HXiZEndVAXF5f5WebuYctrzHv/mG\nyeUHY/DRBQ//bhShqYIQ8LwG37wOSIZHjdM+lo/bPLrYjYa4xvHjgOJK5CT0yu0D\nl+i2mMKKZldlqoE0+opWB+eXJ3P+VBLUqJfxM0RqS/E5GUo+4zH1Ofv43sltEidX\nPEpuXVNam0nn3ppdsrNqcCB2qLDnxKYyNgvJ89pKeTXajzHIr7Bp2kfcQpVYFIK4\nQMXTpHUDGU1fSPCQ9l8deybVOHC1cpvJduXh9W0IMQKBgQDjglEDha6m8bOViO4T\nXu7pDkgYmnf2W+v+fKqKeg+RPUMpjKtOXTRF+ZW5y5VqK7FmpdyTrptinyuzNFfC\nX7GZiEaTVVrhlCBBYUk2C7/7iiJ5LXy2kKgz1PJRPCaven65/wgJofmh1fW9Xsxa\nO3Y1I1/evrLgVE5ImYUZ7pNzBwKBgQDHrP/vdfpWqdE2KZJDWFfpRV7ELIGGNtpM\nyRxvTKD2Yve3vMpIPFhC28c0gidwU1m5Tkb8slgW+aokPu5GSUEINP673arvszYg\nFJckRxtMOieWttizEDtj7OLjpWdxIcbYDkM4BCuKJ5TOyt57E5MnZoeueqzruHRA\n8kczXbJJUQKBgQDCJDFn1Qr98SFzSH8IzqkG/aXuQNp/w182MkIBmzlvkhye9ygz\n3fs+f0YSXzTofdKLqpv49jYoyXUsHk2JU8mlH5JCJcNA3ftMb21fDlXMm8rhJzzW\nOckfOedyBOdqNRixNX0xYyQ3wvJJn/y4PyeXHtGvrYHNRoPrFf5r65etvwKBgQCW\nQdwysaAZuR6jWHMlVISLGNWwYCF0AzERGUHZi1uRLXZmAJ5j720nmsV0AQF2qHJb\nXMlUfUyGtYfQUL7zi0pxx5dtfeiVClIPoA8AkLW9DgIeiyfUz8Exd+BhGGYYHyfI\nDCuPKqwtAY4cc1MqYNeajbBKnywjEiIBgZAM2lRAkQKBgQDOiVYUdtkTvWuROmYp\nQi4pfgSkkdchnXkr4IiwmX19bbsoTEf2s6xwwnvL5itZSEb5mwjWDomx3qSHzd7j\nEamw0hHPba9oW/dJxBA+H7E3NYvt37mg3EQ+4lAri50qGtGMa2nKFCECYNN3/s7B\nLr1Pu91gUCqfEiJlXIEBVX8SmQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "planilhaprosp@planilhaprosp.iam.gserviceaccount.com",
+  "client_id": "113214126262403807135",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/planilhaprosp%40planilhaprosp.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

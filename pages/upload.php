@@ -2,7 +2,7 @@
 require '../vendor/autoload.php';
 
 // Configurar as credenciais
-putenv('GOOGLE_APPLICATION_CREDENTIALS=../projetoconsultoria.json');
+putenv('GOOGLE_APPLICATION_CREDENTIALS=../planilhaprosp.json');
 
 // Criar um cliente do Google Drive
 $client = new Google_Client();
@@ -23,7 +23,7 @@ $nomeArquivo = 'planilha.xlsx';
 $caminhoLocalArquivo = '../planilhas/' . $nomeArquivo;
 
 // ID da pasta "php" no seu Google Drive (substitua pelo ID correto)
-$pastaPhpId = '1W3B428MD3XWBUz4cFbzwHe2TeegP-zma';
+$pastaPhpId = '1Vn9NFv7VNQUfMpjLmbQxerdVhN2CDp1W';
 
 // Upload do arquivo para a pasta "php" no Google Drive
 $fileMetadata = new Google_Service_Drive_DriveFile([
