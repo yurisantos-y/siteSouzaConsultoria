@@ -1,5 +1,5 @@
 <?php
-require_once './index.php';  // Importar as funções e constantes do index.php
+require_once 'index.php';  // Importar as funções e constantes do index.php
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["email"]) && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
@@ -17,8 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($result && $result->num_rows > 0) {
             // O e-mail já está cadastrado, redirecionar para index.php
-            header("Location: index.php");
-            exit();
+            echo '<script>alert("O e-mail já está cadastrado.");</script>';
         } else {
             // Gerar um código de confirmação único
             $confirmationCode = uniqid();
