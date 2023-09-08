@@ -60,7 +60,7 @@ if ($conn->connect_error) {
         </div>
         <ul class="navlista">
             <li><a href="index.php#servicosHome">Serviços</a></li>
-            <li><a href="index.php">Início</a></li>
+            <li><a href="../pages/sobre.php">Sobre</a></li>
             <li><a href="../pages/download.php">Download</a></li>
         </ul>
         <a href="#" id="numberHeader">(45) 99978-7572</a>
@@ -71,7 +71,7 @@ if ($conn->connect_error) {
         <div class="tabelaDownload">
             <ol>
                 <?php
-                    // ID da pasta no Google Drive que contém os arquivos (substitua pelo ID correto)
+                    
                     $pastaPhpId = '1Vn9NFv7VNQUfMpjLmbQxerdVhN2CDp1W';
 
                     // Use a API do Google Drive para listar os arquivos na pasta
@@ -154,6 +154,20 @@ if ($conn->connect_error) {
     <a href="https://api.whatsapp.com/send?phone=5545999787572" target="_blank" class="whatsapp-icon">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script src="../script/scroll.js"></script>
+    <script src="../script/menuMobile.js"></script>
+    <script src="../ck/build/ckeditor.js"></script>
+    <script src="../script/ckeditor.js"></script>
+    <script src="../script/frases.js"></script>
+    <script src="../script/slides.js"></script>
+    <script>
+    initSlider({
+        autoPlay: true,
+        startAtIndex: 0,
+        timeInterval: 2000
+    })
+    </script>
 
 </body>
 

@@ -144,10 +144,22 @@ i.fas.fa-user {
 }
 
 @media screen and (max-width: 1024px) {
+    .download {
+        margin-top: 50%;
+    }
+
 }
 
 
 @media screen and (max-width: 768px) {
+    .download {
+        margin-top: 50%;
+    }
+
+    .tabelaDownload h3{
+        margin-top: 20%;
+    }
+
     footer {
         position: relative;
         flex-direction: column;
