@@ -246,13 +246,16 @@ error_reporting(E_ALL);
             <?php if (isset($_SESSION["adm"]) && $_SESSION["adm"]): ?>
             <form id="fraseForm" action="./salvar.php" method="POST">
                 <textarea name="areaTexto" class="ckeditor" id="areaTexto"></textarea>
+                <input type="text" name="autor" placeholder="Autor da frase">
                 <button type="submit" class="enviar-button">Enviar</button>
             </form>
+
 
             <a href="./logout.php" id="sairCK">Sair</a>
             <?php else: ?>
             <img src="../img/aspas.svg" alt="" id="aspas">
             <p id="frase" class="frase-dinamica"></p>
+            <p id="autorMostra"></p>
             <?php endif; ?>
 
 
@@ -426,9 +429,11 @@ error_reporting(E_ALL);
                 <div class="services">
                     <h3>Serviços</h3>
                     <ul>
-                        <li><a href="https://api.whatsapp.com/send?phone=5545999787572" target="_blank">Consultoria</a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=5545999787572" target="_blank">Consultoria</a>
+                        </li>
                         <li><a href="https://www.computec.com.br/" target="_blank">Sistemas</a></li>
-                        <li><a href="http://computec.mysuite2.com.br/client/chatan.php?&h=529c04a8920540cca1eac54d6e23474c&inf=" target="_blank">Suporte</a></li>
+                        <li><a href="http://computec.mysuite2.com.br/client/chatan.php?&h=529c04a8920540cca1eac54d6e23474c&inf="
+                                target="_blank">Suporte</a></li>
                         <li><a href="../pages/sobre.php">Sobre</a></li>
                     </ul>
                 </div>
@@ -436,8 +441,10 @@ error_reporting(E_ALL);
                     <h3>Social</h3>
                     <ul>
                         <li><a href="https://www.instagram.com/computec.sistemas/" target="_blank">Instagram</a></li>
-                        <li><a href="https://www.facebook.com/computecsantahelena?fref=ts" target="_blank">Facebook</a></li>
-                        <li><a href="https://br.linkedin.com/company/computec-software" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.facebook.com/computecsantahelena?fref=ts" target="_blank">Facebook</a>
+                        </li>
+                        <li><a href="https://br.linkedin.com/company/computec-software" target="_blank">LinkedIn</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="newsletter">
