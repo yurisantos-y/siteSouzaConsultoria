@@ -120,7 +120,7 @@ error_reporting(E_ALL);
             <li><a href="../pages/sobre.php">Sobre</a></li>
             <li><a href="../pages/download.php">Download</a></li>
         </ul>
-        <a href="#" id="numberHeader">(45) 99978-7572</a>
+        <a href="https://api.whatsapp.com/send?phone=5545999787572" id="numberHeader">(45) 99978-7572</a>
     </header>
 
 
@@ -426,18 +426,18 @@ error_reporting(E_ALL);
                 <div class="services">
                     <h3>Serviços</h3>
                     <ul>
-                        <li><a href="#">Consultoria</a></li>
-                        <li><a href="#">Sistemas</a></li>
-                        <li><a href="#">Suporte</a></li>
-                        <li><a href="#">Soluções</a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=5545999787572" target="_blank">Consultoria</a></li>
+                        <li><a href="https://www.computec.com.br/" target="_blank">Sistemas</a></li>
+                        <li><a href="http://computec.mysuite2.com.br/client/chatan.php?&h=529c04a8920540cca1eac54d6e23474c&inf=" target="_blank">Suporte</a></li>
+                        <li><a href="../pages/sobre.php">Sobre</a></li>
                     </ul>
                 </div>
                 <div class="social">
                     <h3>Social</h3>
                     <ul>
-                        <li><a href="https://www.instagram.com">Instagram</a></li>
-                        <li><a href="https://www.facebook.com">Facebook</a></li>
-                        <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/computec.sistemas/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/computecsantahelena?fref=ts" target="_blank">Facebook</a></li>
+                        <li><a href="https://br.linkedin.com/company/computec-software" target="_blank">LinkedIn</a></li>
                     </ul>
                 </div>
                 <div class="newsletter">
