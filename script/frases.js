@@ -10,7 +10,7 @@ function updateFrase() {
         .then(data => {
             // Atualiza o conteúdo da frase e do autor
             fraseElement.textContent = data.frase;
-            autorElement.textContent = "Autor: " + data.autor;
+            autorElement.textContent = "- " + data.autor;
         })
         .catch(error => {
             console.error('Erro ao atualizar a frase:', error);

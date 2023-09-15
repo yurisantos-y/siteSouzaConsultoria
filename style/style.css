@@ -273,7 +273,17 @@ header {
     text-align: center;
     overflow: auto;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 2rem;
+    color: var(--textoEscuro);
+}
+
+#autorMostra {
+    width: 50%;
+    margin: 0 auto;
+    height: 50px;
+    text-align: right;
+    font-weight: 500;
+    font-size: 2.1rem;
     color: var(--textoEscuro);
 }
 
@@ -577,6 +587,11 @@ i.fas.fa-user {
         display: none;
     }
 
+    #autorMostra, #frase{
+        font-size: 0.7rem;
+        height: 20px;
+    }
+
     #descricaoGeralh1 {
         font-size: 6vw;
         margin-top: 10px;
@@ -678,9 +693,12 @@ i.fas.fa-user {
     }
 
     .footer-bottom {
-        flex-direction: column;
         align-items: center;
         margin-top: 10px;
+    }
+
+    .footer-bottom h3 {
+        margin-right: 10px;
     }
 
     .logoFooter img {
