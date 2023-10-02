@@ -5,7 +5,7 @@ function updateFrase() {
 
     // Atualiza a frase e o autor usando AJAX ou outra técnica de requisição ao servidor
     // Aqui está um exemplo usando o Fetch API do JavaScript
-    fetch('atualizar_frase.php')
+    fetch('./pages/atualizar_frase.php')
         .then(response => response.json())
         .then(data => {
             // Atualiza o conteúdo da frase e do autor

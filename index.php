@@ -10,7 +10,7 @@ if (isset($_SESSION['adm']) && $_SESSION['adm']) {
 // Verificar se o usuário deseja fazer logout
 if (isset($_GET['logout'])) {
     session_destroy();
-    header("Location: index.php");
+    header("Location: ./index.php");
     exit();
 }
 
@@ -45,9 +45,10 @@ if (!$result || $result->num_rows === 0) {
 $conn->close();
 
 
-require '../PHPMailer-master/src/PHPMailer.php';
-require '../PHPMailer-master/src/SMTP.php';
-require '../PHPMailer-master/src/Exception.php';
+require __DIR__ . '/PHPMailer-master/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer-master/src/SMTP.php';
+require __DIR__ . '/PHPMailer-master/src/Exception.php';
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -99,9 +100,11 @@ error_reporting(E_ALL);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/slider.css">
-    <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/slider.css">
+
+
+    <link rel="shortcut icon" href="./img/icon.ico" type="image/x-icon">
     <title>Prospere | Consultoria</title>
 </head>
 
@@ -109,7 +112,7 @@ error_reporting(E_ALL);
 
     <!--  -->
     <header>
-        <a href="#" class="logoTopo"><img src="../img/logoLaranja.svg" alt="Logo Laranja"></a>
+        <a href="#" class="logoTopo"><img src="./img/logoLaranja.svg" alt="Logo Laranja"></a>
         <div class="mobile-menu-icon">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -117,8 +120,8 @@ error_reporting(E_ALL);
         </div>
         <ul class="navlista">
             <li><a href="#servicosHome">Serviços</a></li>
-            <li><a href="../pages/sobre.php">Sobre</a></li>
-            <li><a href="../pages/download.php">Download</a></li>
+            <li><a href="./pages/sobre.php">Sobre</a></li>
+            <li><a href="./pages/download.php">Download</a></li>
         </ul>
         <a href="https://api.whatsapp.com/send?phone=5545999787572" id="numberHeader">(45) 99978-7572</a>
     </header>
@@ -128,11 +131,11 @@ error_reporting(E_ALL);
         <section class="landingPage">
             <h1>TRANSFORME DESAFIOS EM <br>OPORTUNIDADES E CONQUISTE O <br> <span id="palavraSucesso">SUCESSO.</span>
             </h1>
-            <img src="../img/imageLandingPage.png" alt="" id="imagemLP">
+            <img src="./img/imageLandingPage.png" alt="" id="imagemLP">
             <div class="icone-aleatorio-container">
-                <img src="../img/icon1LP.png" alt="" id="icon1">
-                <img src="../img/icon2LP.png" alt="" id="icon2">
-                <img src="../img/icon3LP.png" alt="" id="icon3">
+                <img src="./img/icon1LP.png" alt="" id="icon1">
+                <img src="./img/icon2LP.png" alt="" id="icon2">
+                <img src="./img/icon3LP.png" alt="" id="icon3">
 
             </div>
         </section>
@@ -148,7 +151,7 @@ error_reporting(E_ALL);
             </svg>
 
             <a href="#servicosHome" class="scroll-link">
-                <img class="animated-arrow" src="../img/arrowgota.svg" alt="" srcset="">
+                <img class="animated-arrow" src="./img/arrowgota.svg" alt="" srcset="">
             </a>
         </section>
 
@@ -166,7 +169,7 @@ error_reporting(E_ALL);
                 descomplicada.</p>
             <ol class="grid-list">
                 <li>
-                    <img src="../img/rentabilidade.svg" alt="" id="img1">
+                    <img src="./img/rentabilidade.svg" alt="" id="img1">
                     <h3>Estudo de rentabilidade e viabilidade de negócios</h3>
                     <p>Estudo de rentabilidade e viabilidade de negócios: Análise profunda da lucratividade e
                         sustentabilidade econômica de um negócio, considerando projeções financeiras e identificando
@@ -174,7 +177,7 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="../img/planejamentoFinanceiro.svg" alt="">
+                    <img src="./img/planejamentoFinanceiro.svg" alt="">
                     <h3>Planejamento Financeiro</h3>
                     <p>Elaboração de um plano estratégico que engloba as finanças da empresa, permitindo o controle
                         e a
@@ -182,7 +185,7 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="../img/estrategia.svg" alt="">
+                    <img src="./img/estrategia.svg" alt="">
                     <h3>Auxílio em estratégias</h3>
                     <p> Identificação de oportunidades e desenvolvimento de estratégias personalizadas para otimizar
                         o
@@ -190,7 +193,7 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="../img/aumentoResultado.svg" alt="">
+                    <img src="./img/aumentoResultado.svg" alt="">
                     <h3>Aumento de resultados e eficiência</h3>
                     <p>Implementação de ações e práticas que visam maximizar os resultados e a eficiência
                         operacional da
@@ -198,14 +201,14 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="../img/controleFinanceiro.svg" alt="">
+                    <img src="./img/controleFinanceiro.svg" alt="">
                     <h3>Controle e organização financeira</h3>
                     <p>Estabelecimento de processos e ferramentas para garantir o controle adequado das finanças,
                         permitindo uma gestão sólida e organizada do fluxo de caixa, custos e despesas.</p>
                 </li>
 
                 <li>
-                    <img src="../img/precificacao.svg" alt="">
+                    <img src="./img/precificacao.svg" alt="">
                     <h3>Avaliação da precificação</h3>
                     <p>Análise detalhada da estratégia de precificação dos produtos e/ou serviços, visando garantir
                         a
@@ -213,7 +216,7 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="../img/fluxoCaixa.svg" alt="">
+                    <img src="./img/fluxoCaixa.svg" alt="">
                     <h3>Fluxo de caixa</h3>
                     <p>Estudo de rentabilidade e viabilidade de negócios: Análise profunda da lucratividade e
                         sustentabilidade econômica de um negócio, considerando projeções financeiras e identificando
@@ -221,7 +224,7 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="../img/DRE.svg" alt="">
+                    <img src="./img/DRE.svg" alt="">
                     <h3>D.R.E</h3>
                     <p>Relatório Gerencial que apresenta as operações financeiras da empresa, incluindo receitas,
                         custos, despesas, lucros e impostos, permitindo uma análise aprofundada do desempenho
@@ -229,7 +232,7 @@ error_reporting(E_ALL);
                 </li>
 
                 <li>
-                    <img src="../img/pontoEquilibrio.svg" alt="">
+                    <img src="./img/pontoEquilibrio.svg" alt="">
                     <h3>Ponto de equilíbrio</h3>
                     <p>Determinação do nível mínimo de faturamento necessário para cobrir todos os custos e
                         despesas,
@@ -244,16 +247,16 @@ error_reporting(E_ALL);
 
         <section class="frase">
             <?php if (isset($_SESSION["adm"]) && $_SESSION["adm"]): ?>
-            <form id="fraseForm" action="./salvar.php" method="POST">
+            <form id="fraseForm" action="./pages/salvar.php" method="POST">
                 <textarea name="areaTexto" class="ckeditor" id="areaTexto"></textarea>
                 <input type="text" name="autor" placeholder="Autor da frase">
                 <button type="submit" class="enviar-button">Enviar</button>
             </form>
 
 
-            <a href="./logout.php" id="sairCK">Sair</a>
+            <a href="./pages/logout.php" id="sairCK">Sair</a>
             <?php else: ?>
-            <img src="../img/aspas.svg" alt="" id="aspas">
+            <img src="./img/aspas.svg" alt="" id="aspas">
             <p id="frase" class="frase-dinamica"></p>
             <p id="autorMostra"></p>
             <?php endif; ?>
@@ -365,54 +368,54 @@ error_reporting(E_ALL);
                 <div class="slide-list" data-slide="list">
                     <div class="slide-item" data-slide="item" data-index="0">
                         <div class="slide-content">
-                            <img class="slide-image" src="../img/imgSlide.jpg" alt="">
+                            <img class="slide-image" src="./img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                     <div class="slide-item" data-slide="item" data-index="1">
                         <div class="slide-content">
-                            <img class="slide-image" src="../img/imgSlide.jpg" alt="">
+                            <img class="slide-image" src="./img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                     <div class="slide-item" data-slide="item" data-index="2">
                         <div class="slide-content">
-                            <img class="slide-image" src="../img/imgSlide.jpg" alt="">
+                            <img class="slide-image" src="./img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                     <div class="slide-item" data-slide="item" data-index="3">
                         <div class="slide-content">
-                            <img class="slide-image" src="../img/imgSlide.jpg" alt="">
+                            <img class="slide-image" src="./img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                     <div class="slide-item" data-slide="item" data-index="4">
                         <div class="slide-content">
-                            <img class="slide-image" src="../img/imgSlide.jpg" alt="">
+                            <img class="slide-image" src="./img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                     <div class="slide-item" data-slide="item" data-index="5">
                         <div class="slide-content">
-                            <img class="slide-image" src="../img/imgSlide.jpg" alt="">
+                            <img class="slide-image" src="./img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                     <div class="slide-item" data-slide="item" data-index="6">
                         <div class="slide-content">
-                            <img class="slide-image" src="../img/imgSlide.jpg" alt="">
+                            <img class="slide-image" src="./img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                     <div class="slide-item" data-slide="item" data-index="7">
                         <div class="slide-content">
-                            <img class="slide-image" src="../img/imgSlide.jpg" alt="">
+                            <img class="slide-image" src="./img/imgSlide.jpg" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <script src="../script/scroll.js"></script>
-        <script src="../script/menuMobile.js"></script>
-        <script src="../ck/build/ckeditor.js"></script>
-        <script src="../script/ckeditor.js"></script>
-        <script src="../script/frases.js"></script>
-        <script src="../script/slides.js"></script>
+        <script src="./script/scroll.js"></script>
+        <script src="./script/menuMobile.js"></script>
+        <script src="./ck/build/ckeditor.js"></script>
+        <script src="./script/ckeditor.js"></script>
+        <script src="./script/frases.js"></script>
+        <script src="./script/slides.js"></script>
         <script>
         initSlider({
             autoPlay: true,
@@ -424,7 +427,7 @@ error_reporting(E_ALL);
         <footer>
             <div class="footer-content">
                 <div class="logoFooter">
-                    <img src="../img/logoFooter.png" alt="">
+                    <img src="./img/logoFooter.png" alt="">
                 </div>
                 <div class="services">
                     <h3>Serviços</h3>
@@ -434,7 +437,7 @@ error_reporting(E_ALL);
                         <li><a href="https://www.computec.com.br/" target="_blank">Sistemas</a></li>
                         <li><a href="http://computec.mysuite2.com.br/client/chatan.php?&h=529c04a8920540cca1eac54d6e23474c&inf="
                                 target="_blank">Suporte</a></li>
-                        <li><a href="../pages/sobre.php">Sobre</a></li>
+                        <li><a href="./pages/sobre.php">Sobre</a></li>
                     </ul>
                 </div>
                 <div class="social">
@@ -449,7 +452,7 @@ error_reporting(E_ALL);
                 </div>
                 <div class="newsletter">
                     <h3 id="textoNewsletter">Receba novas informações:</h3>
-                    <form id="newsletterForm" action="./newsletter.php" method="POST">
+                    <form id="newsletterForm" action="newsletter.php" method="POST">
                         <input type="email" name="email" placeholder="Digite seu e-mail" required>
                         <button type="submit">Inscrever-se</button>
                     </form>
@@ -460,7 +463,7 @@ error_reporting(E_ALL);
 
             <div class="footer-bottom">
                 <div class="computec">
-                    <img src="../img/logoComputecDark.svg" alt="">
+                    <img src="./img/logoComputecDark.svg" alt="">
                     <h3>computec</h3>
                 </div>
                 <div class="rights">
@@ -475,7 +478,12 @@ error_reporting(E_ALL);
             <i class="fab fa-whatsapp"></i>
         </a>
 
-
+        <script src="../script/scroll.js"></script>
+        <script src="../script/menuMobile.js"></script>
+        <script src="../ck/build/ckeditor.js"></script>
+        <script src="../script/ckeditor.js"></script>
+        <script src="../script/frases.js"></script>
+        <script src="../script/slides.js"></script>
 
     </main>
 </body>

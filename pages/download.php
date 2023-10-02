@@ -59,7 +59,7 @@ if ($conn->connect_error) {
             <div class="bar"></div>
         </div>
         <ul class="navlista">
-            <li><a href="index.php#servicosHome">Serviços</a></li>
+            <li><a href="../index.php#servicosHome">Serviços</a></li>
             <li><a href="../pages/sobre.php">Sobre</a></li>
             <li><a href="../pages/download.php">Download</a></li>
         </ul>

@@ -15,14 +15,14 @@
 
     <!--  -->
     <header>
-        <a href="index.php" class="logoTopo"><img src="../img/logoLaranja.svg" alt="Logo Laranja"></a>
+        <a href="../index.php" class="logoTopo"><img src="../img/logoLaranja.svg" alt="Logo Laranja"></a>
         <div class="mobile-menu-icon">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
         <ul class="navlista">
-            <li><a href="index.php#servicosHome">Serviços</a></li>
+            <li><a href="../index.php#servicosHome">Serviços</a></li>
             <li><a href="../pages/sobre.php">Sobre</a></li>
             <li><a href="../pages/download.php">Download</a></li>
         </ul>
