@@ -52,7 +52,7 @@ if ($conn->connect_error) {
 
 <body class="centered-body">
     <header>
-        <a href="index.php" class="logoTopo"><img src="../img/logoLaranja.svg" alt="Logo Laranja"></a>
+        <a href="../index.php" class="logoTopo"><img src="../img/logoLaranja.svg" alt="Logo Laranja"></a>
         <div class="mobile-menu-icon">
             <div class="bar"></div>
             <div class="bar"></div>
