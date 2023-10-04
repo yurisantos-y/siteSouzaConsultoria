@@ -131,7 +131,7 @@ if ($conn->connect_error) {
             </div>
             <div class="newsletter">
                 <h3 id="textoNewsletter">Receba novas informações:</h3>
-                <form id="newsletterForm" action="newsletter.php" method="POST">
+                <form id="newsletterForm" action="../newsletter.php" method="POST">
                     <input type="email" name="email" placeholder="Digite seu e-mail" required>
                     <button type="submit">Inscrever-se</button>
                 </form>
