@@ -19,6 +19,10 @@ namespace Google\Service\Integrations;
 
 class GoogleCloudConnectorsV1ConnectorVersionInfraConfig extends \Google\Model
 {
+  /**
+   * @var string
+   */
+  public $connectionRatelimitWindowSeconds;
   protected $hpaConfigType = GoogleCloudConnectorsV1HPAConfig::class;
   protected $hpaConfigDataType = '';
   /**
@@ -33,7 +37,25 @@ class GoogleCloudConnectorsV1ConnectorVersionInfraConfig extends \Google\Model
   protected $resourceLimitsDataType = '';
   protected $resourceRequestsType = GoogleCloudConnectorsV1ResourceRequests::class;
   protected $resourceRequestsDataType = '';
+  /**
+   * @var string
+   */
+  public $sharedDeployment;
 
+  /**
+   * @param string
+   */
+  public function setConnectionRatelimitWindowSeconds($connectionRatelimitWindowSeconds)
+  {
+    $this->connectionRatelimitWindowSeconds = $connectionRatelimitWindowSeconds;
+  }
+  /**
+   * @return string
+   */
+  public function getConnectionRatelimitWindowSeconds()
+  {
+    return $this->connectionRatelimitWindowSeconds;
+  }
   /**
    * @param GoogleCloudConnectorsV1HPAConfig
    */
@@ -103,6 +125,20 @@ class GoogleCloudConnectorsV1ConnectorVersionInfraConfig extends \Google\Model
   public function getResourceRequests()
   {
     return $this->resourceRequests;
+  }
+  /**
+   * @param string
+   */
+  public function setSharedDeployment($sharedDeployment)
+  {
+    $this->sharedDeployment = $sharedDeployment;
+  }
+  /**
+   * @return string
+   */
+  public function getSharedDeployment()
+  {
+    return $this->sharedDeployment;
   }
 }
 

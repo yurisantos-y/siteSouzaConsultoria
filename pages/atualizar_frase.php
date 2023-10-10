@@ -1,9 +1,6 @@
 <?php
 // Conectar-se ao banco de dados
-define('HOST', 'localhost');
-define('USER', 'root');
-define('PASS', '');
-define('BASE', 'sisprospere');
+include 'config.php';
 
 $conn = new mysqli(HOST, USER, PASS, BASE);
 if ($conn->connect_error) {

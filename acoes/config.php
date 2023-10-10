@@ -1,8 +1,5 @@
 <?php 
-    define('HOST', 'localhost');
-    define('USER', 'root');
-    define('PASS', '');
-    define('BASE', 'sisprospere');
+    include '../config.php';
 
     try{
         $conn = new MySQLi(HOST, USER, PASS, BASE);

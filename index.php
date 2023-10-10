@@ -16,10 +16,7 @@ if (isset($_GET['logout'])) {
 
 
 // Conectar-se ao banco de dados
-define('HOST', 'localhost');
-define('USER', 'root');
-define('PASS', '');
-define('BASE', 'sisprospere');
+include 'config.php';
 
 $conn = new mysqli(HOST, USER, PASS, BASE);
 if ($conn->connect_error) {
@@ -247,7 +244,7 @@ error_reporting(E_ALL);
 
         <section class="frase">
             <?php if (isset($_SESSION["adm"]) && $_SESSION["adm"]): ?>
-            <form id="fraseForm" action="./pages/salvar.php" method="POST">
+            <form id="fraseForm" action="/pages/salvar.php" method="POST">
                 <textarea name="areaTexto" class="ckeditor" id="areaTexto"></textarea>
                 <input type="text" name="autor" placeholder="Autor da frase">
                 <button type="submit" class="enviar-button">Enviar</button>
@@ -265,9 +262,9 @@ error_reporting(E_ALL);
         </section>
 
 
-        <div id="popup" class="popup">
+       <!--  <div id="popup" class="popup">
             <p id="popupMessage"></p>
-        </div>
+        </div> -->
 
         <script>
         // Função para fechar o pop-up

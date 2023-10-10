@@ -51,10 +51,7 @@ class ProjectsLocationsFeaturestoresEntityTypesFeatures extends \Google\Service\
   /**
    * Creates a new Feature in a given EntityType. (features.create)
    *
-   * @param string $parent Required. The resource name of the EntityType or
-   * FeatureGroup to create a Feature. Format: `projects/{project}/locations/{loca
-   * tion}/featurestores/{featurestore}/entityTypes/{entity_type}`
-   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param string $parent
    * @param GoogleCloudAiplatformV1Feature $postBody
    * @param array $optParams Optional parameters.
    *
@@ -131,8 +128,8 @@ class ProjectsLocationsFeaturestoresEntityTypesFeatures extends \Google\Service\
    * ListFeaturesRequest.latest_stats_count, return all existing stats.
    * @opt_param string orderBy A comma-separated list of fields to order by,
    * sorted in ascending order. Use "desc" after a field name for descending.
-   * Supported fields: * `feature_id` * `value_type` * `create_time` *
-   * `update_time`
+   * Supported fields: * `feature_id` * `value_type` (Not supported for
+   * FeatureRegistry Feature) * `create_time` * `update_time`
    * @opt_param int pageSize The maximum number of Features to return. The service
    * may return fewer than this value. If unspecified, at most 1000 Features will
    * be returned. The maximum value is 1000; any value greater than 1000 will be

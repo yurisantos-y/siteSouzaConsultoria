@@ -5,7 +5,7 @@ if (empty($_POST) || empty($_POST["usuario"]) || empty($_POST["senha"])) {
     print "<script>location.href='../pages/index.php';</script>";
 }
 
-include('config.php');
+include './config.php';
 
 $usuario = $_POST["usuario"];
 $senha = $_POST["senha"];
