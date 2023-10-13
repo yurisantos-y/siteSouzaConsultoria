@@ -410,7 +410,7 @@ error_reporting(E_ALL);
         <script src="./script/scroll.js"></script>
         <script src="./script/menuMobile.js"></script>
         <script src="./ck/build/ckeditor.js"></script>
-        <script src="./script/ckeditor.js"></script>
+        <script src="./script/ckeditorIndex.js"></script>
         <script src="./script/frases.js"></script>
         <script src="./script/slides.js"></script>
         <script>
@@ -475,12 +475,6 @@ error_reporting(E_ALL);
             <i class="fab fa-whatsapp"></i>
         </a>
 
-        <script src="../script/scroll.js"></script>
-        <script src="../script/menuMobile.js"></script>
-        <script src="../ck/build/ckeditor.js"></script>
-        <script src="../script/ckeditor.js"></script>
-        <script src="../script/frases.js"></script>
-        <script src="../script/slides.js"></script>
 
     </main>
 </body>
