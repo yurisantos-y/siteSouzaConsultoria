@@ -1,6 +1,6 @@
 <?php
 // Conectar-se ao banco de dados
-include 'config.php';
+include '../config.php';
 
 $conn = new mysqli(HOST, USER, PASS, BASE);
 if ($conn->connect_error) {

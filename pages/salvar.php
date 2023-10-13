@@ -2,7 +2,7 @@
 session_start(); // Certifique-se de iniciar a sessão se ainda não estiver iniciada
 
 // Conexão com o banco de dados (substitua pelas suas configurações)
-include 'config.php';
+include '../config.php';
 
 // Obtém a frase do CKEditor do campo "areaTexto"
 $frase = $_POST['areaTexto'];
