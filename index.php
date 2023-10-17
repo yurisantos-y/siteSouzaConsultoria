@@ -192,8 +192,7 @@ error_reporting(E_ALL);
                 <li>
                     <img src="./img/aumentoResultado.svg" alt="">
                     <h3>Aumento de resultados e eficiência</h3>
-                    <p>Implementação de ações e práticas que visam maximizar os resultados e a eficiência
-                        operacional da
+                    <p>Implementação de ações e práticas que visam maximizar os resultados e a eficiência operacional da
                         empresa, melhorando sua produtividade e lucratividade.</p>
                 </li>
 
@@ -207,8 +206,7 @@ error_reporting(E_ALL);
                 <li>
                     <img src="./img/precificacao.svg" alt="">
                     <h3>Avaliação da precificação</h3>
-                    <p>Análise detalhada da estratégia de precificação dos produtos e/ou serviços, visando garantir
-                        a
+                    <p>Análise detalhada da estratégia de precificação dos produtos e/ou serviços, visando garantir a
                         competitividade de mercado e a rentabilidade do negócio.</p>
                 </li>
 
@@ -262,7 +260,7 @@ error_reporting(E_ALL);
         </section>
 
 
-       <!--  <div id="popup" class="popup">
+        <!--  <div id="popup" class="popup">
             <p id="popupMessage"></p>
         </div> -->
 
