@@ -126,15 +126,13 @@ error_reporting(E_ALL);
 
     <main>
         <section class="landingPage">
-            <h1>TRANSFORME DESAFIOS EM <br>OPORTUNIDADES E CONQUISTE O <br> <span id="palavraSucesso">SUCESSO.</span>
-            </h1>
-            <img src="./img/imageLandingPage.png" alt="" id="imagemLP">
-            <div class="icone-aleatorio-container">
-                <img src="./img/icon1LP.png" alt="" id="icon1">
-                <img src="./img/icon2LP.png" alt="" id="icon2">
-                <img src="./img/icon3LP.png" alt="" id="icon3">
-
+            <div class="content">
+                <h1>TRANSFORME DESAFIOS EM <br>OPORTUNIDADES E CONQUISTE O <br> <span
+                        id="palavraSucesso">SUCESSO.</span></h1>
+                <p>A Prospere Consultoria Financeira pode ajudá-lo a alcançar o sucesso<br> por meio de consultorias personalizadas para o seu negócio.</p>
+                <button id="btnLP" href="#servicosHome" class="scroll-link">SAIBA MAIS</button>
             </div>
+            <img src="./img/imageLandingPage.png" alt="" id="imagemLP">
         </section>
 
         <section class="gota">
@@ -165,14 +163,6 @@ error_reporting(E_ALL);
             <p class="descricaoFinalp">Tudo isso será feito em reuniões online frequentes, com uma linguagem simples e
                 descomplicada.</p>
             <ol class="grid-list">
-                <li>
-                    <img src="./img/rentabilidade.svg" alt="" id="img1">
-                    <h3>Estudo de rentabilidade e viabilidade de negócios</h3>
-                    <p>Estudo de rentabilidade e viabilidade de negócios: Análise profunda da lucratividade e
-                        sustentabilidade econômica de um negócio, considerando projeções financeiras e identificando
-                        possíveis riscos e oportunidades.</p>
-                </li>
-
                 <li>
                     <img src="./img/planejamentoFinanceiro.svg" alt="">
                     <h3>Planejamento Financeiro</h3>

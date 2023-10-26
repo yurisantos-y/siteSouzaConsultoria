@@ -36,7 +36,8 @@ header {
     align-items: center;
     padding: 20px 9%;
     background: rgb(249, 246, 247);
-    background: linear-gradient(180deg, rgba(249, 246, 247, 1) 1%, rgba(255, 255, 255, 0) 100%);
+    /* background: linear-gradient(180deg, rgba(249, 246, 247, 1) 1%, rgba(255, 255, 255, 0) 100%); */
+   border-bottom: 1px solid #e7e7e7;
 }
 
 .navlista{
@@ -111,29 +112,34 @@ header {
 .landingPage h1{
     color: var(--textoEscuro);
     margin-top: 150px;
+    text-align: left;
+    margin-left: 18%;
+    line-height: 1.5em;
 }
 
-#icon1,
-#icon2,
-#icon3 {
-    position: absolute;
-    width: 2%; /* Ajuste o tamanho conforme necessário */
-    height: auto;
+.content p {
+    margin-left: 18%;
+    margin-top: 2%;
+    font-size: 0.9vw;
+    text-align: left;
 }
 
-#icon1 {
-    top: 40%; /* Ajuste a posição vertical conforme necessário */
-    left: 15%; /* Ajuste a posição horizontal conforme necessário */
+#btnLP{
+    margin-top: 3%;
+    border-radius: 10px;
+    background-color: var(--laranja);
+    color: var(--branco);
+    width: 130px;
+    height: 45px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 500ms;
+    margin-right: 50%;
 }
 
-#icon2 {
-    top: 46%; /* Ajuste a posição vertical conforme necessário */
-    right: 60%; /* Ajuste a posição horizontal conforme necessário */
-}
-
-#icon3 {
-    bottom: 35%; /* Ajuste a posição vertical conforme necessário */
-    left: 10%; /* Ajuste a posição horizontal conforme necessário */
+#btnLP:hover{
+    background-color: #FF7749;
+    transition: 500ms;
 }
 
 
@@ -576,6 +582,20 @@ i.fas.fa-user {
         margin-top: 150px;
         font-size: 18px;
         margin-bottom: 20px;
+    }
+
+    .landingPage h1 {
+        font-size: 4.0vw;
+    }
+
+    #btnLP {
+        width: 40%;
+        margin-top: 20px;
+        margin-right: 25%;
+    }
+
+    .landingPage p {
+        font-size: 2.2vw;
     }
 
     #imagemLP {
