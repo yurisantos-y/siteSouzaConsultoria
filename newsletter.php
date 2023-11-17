@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $sql = "INSERT INTO newsletter_emails (email, confirmation_code) VALUES ('$email', '$confirmationCode')";
             if ($conn->query($sql) === TRUE) {
                 // Enviar e-mail de confirmação
-                $assunto = "Confirme sua inscrição na Newsletter";
+                $assunto = "Confirme seu acesso a Newsletter";
                 $mensagem = "Clique no link abaixo para confirmar sua inscrição:\n";
                 $mensagem .= "http://localhost/siteSouzaConsultoria/pages/confirmacao.php?code=$confirmationCode";
 

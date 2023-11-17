@@ -59,8 +59,8 @@ function enviarEmail($destinatario, $assunto, $mensagem) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';  // Informe o host do servidor SMTP
         $mail->SMTPAuth = true;
-        $mail->Username = 'yuri01.sp@gmail.com';  // Informe o usuário do servidor SMTP
-        $mail->Password = 'iadvnsuqljvbvuxp';  // Informe a senha do servidor SMTP
+        $mail->Username = 'ccomputec802@gmail.com';  // Informe o usuário do servidor SMTP
+        $mail->Password = 'gpff wzxe axpw xfgb';  // Informe a senha do servidor SMTP
         $mail->SMTPSecure = 'tls';  // Use 'tls' ou 'ssl' de acordo com a configuração do seu servidor
         $mail->Port = 587;  // Porta do servidor SMTP
 
